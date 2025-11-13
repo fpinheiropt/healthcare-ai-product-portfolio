@@ -13,8 +13,8 @@
 - 🏥 **Analyzing 10 healthcare AI products** to understand product strategy patterns
 - 📄 **Writing professional PRDs** with clinical user research (cardiologists, endocrinologists, pulmonologists)
 - 🤖 **Building 3 AI healthcare product MVPs**: HeartGuide AI, GlucoWise AI, and BreathEasy AI
-- 📝 **Publishing weekly blog posts** documenting my MD → AI PM transition
-- 🎓 **Completing EDIT Data Science & Advanced AI bootcamps** (Jan-July 2026)
+- 📝 **Publishing weekly blog posts** documenting my MD + AI PM journey
+- 🎓 **Completing EDIT Data Science & Advanced AI bootcamps** (Future Plan)
 
 ## 🔍 My Unique Advantage
 
@@ -49,7 +49,7 @@ In-depth analyses of 10+ healthcare AI products, including:
 - Hello Heart
 - And more...
 
-### 2. Heart Failure Readmission Prevention PRD
+### 2. Heart Failure Readmission Prevention PRD (Coming Soon)
 Professional product requirements document for an AI-powered solution to reduce 30-day readmissions in heart failure patients.
 
 ### 3. AI Healthcare Product MVPs (Coming Soon)
@@ -61,9 +61,8 @@ Professional product requirements document for an AI-powered solution to reduce 
 
 - **MD** - Faculdade de Medicina da Universidade do Porto (FMUP) | 2017-2023
 - **MSc Biomedical Engineering** - Instituto Superior Técnico (IST), Universidade de Lisboa | 2013-2018
-- **Reforge Product Strategy** (Currently Enrolled)
-- **EDIT Data Science Bootcamp** (Starts Jan 2026)
-- **EDIT Advanced AI Bootcamp** (Starts May 2026)
+- **EDIT Data Science Bootcamp** (Future Projetc)
+- **EDIT Advanced AI Bootcamp** (Future Projetc)
 
 ## 📝 Blog & Writing
 
@@ -71,27 +70,15 @@ I document my journey from MD to AI Product Manager through regular writing:
 - Weekly posts on [LinkedIn](https://linkedin.com/in/fmmpinheiro)
 - Technical deep dives on [Medium](https://medium.com/@yourusername) (Coming Soon)
 
-## 🌟 My 12-Month Plan
-
-| Timeline | Goal |
-|----------|------|
-| **Nov 2025 - Jan 2026** | Complete healthcare AI product analyses |
-| **Feb - Apr 2026** | Ship HeartGuide AI MVP with clinical validation |
-| **May - Jul 2026** | Complete EDIT bootcamps, launch GlucoWise AI |
-| **Aug - Oct 2026** | Deploy BreathEasy AI, prepare job applications |
-| **Nov 2026** | Begin applying for AI Product Manager roles |
-
 ## 🤝 Let's Connect
 
-I'm actively looking to connect with:
 - Healthcare technology leaders
 - AI/ML engineers in healthcare
 - Product managers in digital health
 - Clinical professionals interested in AI
 
-📧 **Email**: [Your Email]  
+📧 **Email**: fpinheiro921@gmail.com 
 💼 **LinkedIn**: [Francisco Pinheiro](https://linkedin.com/in/fmmpinheiro)  
-🐦 **Twitter**: [@YourHandle]  
 
 ## 📄 License
 
