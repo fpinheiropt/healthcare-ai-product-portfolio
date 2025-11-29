@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Wind, Droplet, Github, Linkedin, Mail, ExternalLink, ArrowRight } from 'lucide-react';
+import { Heart, Wind, Droplet, Github, Linkedin, Mail, ExternalLink, ArrowRight, FileText, Search } from 'lucide-react';
 
 function App() {
     const projects = [
@@ -162,6 +162,100 @@ function App() {
                                 </motion.div>
                             );
                         })}
+                    </div>
+                </div>
+            </section>
+
+            {/* Product Thinking Section */}
+            <section className="py-24 bg-slate-50">
+                <div className="max-w-7xl mx-auto px-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+                            Product Thinking
+                        </h2>
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                            Deep dives into market analysis, product strategy, and requirements definition.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <motion.a
+                            href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/HeartGuide-AI-PRD.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                        >
+                            <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                                <FileText className="w-7 h-7 text-blue-600" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                HeartGuide AI PRD
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                Comprehensive Product Requirements Document for an AI-powered heart failure readmission prevention system.
+                            </p>
+                            <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                                Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </motion.a>
+
+                        <motion.a
+                            href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Sword-Health-Teardown.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                        >
+                            <div className="bg-purple-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-100 transition-colors">
+                                <Search className="w-7 h-7 text-purple-600" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                                Sword Health Teardown
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                Deep dive into the digital MSK care market, analyzing Sword Health's sensor technology and business model.
+                            </p>
+                            <div className="flex items-center gap-2 text-purple-600 font-semibold text-sm">
+                                Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </motion.a>
+
+                        <motion.a
+                            href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Omada-Health-Teardown.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                        >
+                            <div className="bg-emerald-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
+                                <Search className="w-7 h-7 text-emerald-600" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                                Omada Health Teardown
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                Analysis of the "Virtual First" care model and how frictionless hardware drives patient adherence.
+                            </p>
+                            <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm">
+                                Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </motion.a>
                     </div>
                 </div>
             </section>

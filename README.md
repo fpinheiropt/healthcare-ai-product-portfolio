@@ -65,7 +65,7 @@ Type 2 diabetes coaching platform combining continuous glucose insights with per
 ### 2. Healthcare AI Product Teardowns
 In-depth analyses of 10+ healthcare AI products, including:
 - **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Deep dive into the future of digital MSK care.
-- Omada Health
+- **[Omada Health](project-1-teardowns/Omada-Health-Teardown.md)**: The pioneer of "Virtual First" chronic care.
 - Hello Heart
 - And more...
 
