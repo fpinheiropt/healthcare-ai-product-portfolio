@@ -20,8 +20,6 @@
 
 I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineering, and product thinking**. As a physician with a Master's in Biomedical Engineering, I combine deep clinical expertise with technical skills to build AI solutions that truly address healthcare challenges. 
 
-> *"Focus on Product Development in the AI vertical"* — Virgílio Bento, CEO of Sword Health
-
 ## 🛠️ Technical Stack
 
 ### Product Management
