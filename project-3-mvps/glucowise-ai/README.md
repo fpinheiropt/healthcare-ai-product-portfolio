@@ -1,85 +1,20 @@
-# GlucoWise AI
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-## 🌡️ Overview
-GlucoWise AI is an intelligent continuous glucose monitoring system that predicts blood glucose levels 30 minutes in advance, helping people with diabetes better manage their condition.
+# Run and deploy your AI Studio app
 
-## 🎯 Problem Statement
-Current CGM systems provide real-time glucose readings but don't predict future glucose levels, making it challenging for users to proactively manage their blood sugar.
+This contains everything you need to run your app locally.
 
-## 🚀 Solution
-GlucoWise AI uses advanced time-series forecasting to predict glucose levels, enabling users to take preventive action before hyperglycemia or hypoglycemia occurs.
+View your app in AI Studio: https://ai.studio/apps/drive/1GVd9_3962K8kjol27VfpNfz11Wdd9UIk
 
-## 👥 Target Users
-- **Primary**: People with Type 1 and Type 2 diabetes
-- **Secondary**: Endocrinologists, Diabetes Educators
+## Run Locally
 
-## 🛠 Tech Stack
-- **Frontend**: React Native
-- **Backend**: FastAPI
-- **ML Framework**: PyTorch (PyTorch Lightning)
-- **Time Series**: Darts, Prophet
-- **Database**: TimescaleDB
-- **Deployment**: Kubernetes, GCP
+**Prerequisites:**  Node.js
 
-## 🎯 Key Features
-1. **Glucose Prediction**
-   - 30-minute ahead predictions
-   - Trend analysis
-   - Confidence intervals
 
-2. **Personalized Insights**
-   - Meal impact analysis
-   - Exercise recommendations
-   - Pattern recognition
-
-3. **Clinical Integration**
-   - Dexcom/FreeStyle Libre integration
-   - Provider dashboard
-   - HIPAA-compliant data handling
-
-## 📊 Model Performance
-- **RMSE**: 12.3 mg/dL
-- **MARD**: 8.7%
-- **Prediction Horizon**: 30 minutes
-- **Inference Time**: <100ms
-
-## 🚀 Getting Started
-```bash
-# Clone the repository
-git clone [repository-url]
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the API
-uvicorn app.main:app --reload
-```
-
-## 📂 Project Structure
-```
-glucowise-ai/
-├── app/                 # API application
-│   ├── main.py         # FastAPI application
-│   └── models/         # Model serving
-├── mobile/             # React Native app
-├── notebooks/          # Jupyter notebooks
-│   ├── data_analysis.ipynb
-│   └── model_development.ipynb
-└── tests/              # Test suite
-```
-
-## 📅 Development Roadmap
-- [ ] Data collection pipeline
-- [ ] Model development
-- [ ] API development
-- [ ] Mobile app development
-- [ ] Clinical validation
-
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
-
-## 🤝 Contributing
-Contributions are welcome! Please read our contributing guidelines for details.
-
-## 📧 Contact
-For questions or feedback, please contact [your-email@example.com](mailto:your-email@example.com)
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

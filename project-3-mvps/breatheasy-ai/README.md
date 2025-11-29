@@ -1,84 +1,20 @@
-# BreathEasy AI
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-## 🌬️ Overview
-BreathEasy AI is an intelligent asthma management platform that predicts asthma exacerbations up to 24 hours in advance, helping users prevent severe attacks through early intervention.
+# Run and deploy your AI Studio app
 
-## 🎯 Problem Statement
-Asthma affects over 300 million people worldwide, with many experiencing preventable exacerbations. Current solutions are reactive rather than predictive.
+This contains everything you need to run your app locally.
 
-## 🚀 Solution
-BreathEasy AI combines environmental data, user symptoms, and health metrics to predict asthma attacks before they happen, enabling proactive management.
+View your app in AI Studio: https://ai.studio/apps/drive/1kS4iKUFo-Y7xNl7i-RJf-cRYNIB8uRmC
 
-## 👥 Target Users
-- **Primary**: Adults and children with asthma
-- **Secondary**: Pulmonologists, Allergists, Caregivers
+## Run Locally
 
-## 🛠 Tech Stack
-- **Frontend**: React.js
-- **Backend**: Node.js, Express
-- **ML Framework**: Scikit-learn, XGBoost
-- **IoT Integration**: Bluetooth sensors
-- **Database**: MongoDB
-- **Deployment**: AWS, Docker
+**Prerequisites:**  Node.js
 
-## 🎯 Key Features
-1. **Attack Prediction**
-   - 24-hour advance warning
-   - Personalized risk factors
-   - Environmental triggers analysis
 
-2. **Smart Inhaler Integration**
-   - Usage tracking
-   - Reminders and alerts
-   - Adherence monitoring
-
-3. **Environmental Monitoring**
-   - Air quality index integration
-   - Pollen and allergen tracking
-   - Weather impact analysis
-
-## 📊 Model Performance
-- **Accuracy**: 82.4%
-- **Precision**: 85.1%
-- **Recall**: 80.7%
-- **F1 Score**: 82.8%
-
-## 🚀 Getting Started
-```bash
-# Clone the repository
-git clone [repository-url]
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-## 📂 Project Structure
-```
-breatheasy-ai/
-├── client/              # React frontend
-├── server/              # Node.js backend
-│   ├── models/         # ML models
-│   └── routes/         # API routes
-├── mobile/             # React Native app (future)
-├── docs/               # Documentation
-└── tests/              # Test suite
-```
-
-## 📅 Development Roadmap
-- [ ] Data collection and preprocessing
-- [ ] Model development
-- [ ] Web application development
-- [ ] Mobile app development
-- [ ] Clinical validation
-
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
-
-## 🤝 Contributing
-Contributions are welcome! Please read our contributing guidelines for details.
-
-## 📧 Contact
-For questions or feedback, please contact [your-email@example.com](mailto:your-email@example.com)
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

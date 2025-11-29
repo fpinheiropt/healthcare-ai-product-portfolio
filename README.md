@@ -64,12 +64,12 @@ Type 2 diabetes coaching platform combining continuous glucose insights with per
 
 ### 2. Healthcare AI Product Teardowns
 In-depth analyses of 10+ healthcare AI products, including:
-- Sword Health
+- **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Deep dive into the future of digital MSK care.
 - Omada Health
 - Hello Heart
 - And more...
 
-### 3. Heart Failure Readmission Prevention PRD (Coming Soon)
+### 3. [Heart Failure Readmission Prevention PRD](project-2-prd/HeartGuide-AI-PRD.md)
 Professional product requirements document for an AI-powered solution to reduce 30-day readmissions in heart failure patients.
 
 ## 📚 Education & Certifications
