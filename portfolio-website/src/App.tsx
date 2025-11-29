@@ -184,7 +184,8 @@ function App() {
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* First Row: 2 PRDs + 2 Teardowns */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                         <motion.a
                             href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/HeartGuide-AI-PRD.md"
                             target="_blank"
@@ -282,7 +283,8 @@ function App() {
                         </motion.a>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8 mt-8">
+                    {/* Second Row: Hello Heart (centered) */}
+                    <div className="flex justify-center">
                         <motion.a
                             href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Hello-Heart-Teardown.md"
                             target="_blank"
@@ -291,7 +293,7 @@ function App() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.4 }}
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group w-full max-w-sm"
                         >
                             <div className="bg-red-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-100 transition-colors">
                                 <Search className="w-7 h-7 text-red-600" />
@@ -307,186 +309,90 @@ function App() {
                             </div>
                         </motion.a>
                     </div>
-                    <motion.a
-                        href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/HeartGuide-AI-PRD.md"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                </div>
+            </section>
+
+            {/* About Section */}
+            <section className="py-24 bg-gradient-to-br from-slate-50 to-white">
+                <div className="max-w-4xl mx-auto px-6">
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
                     >
-                        <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
-                            <FileText className="w-7 h-7 text-blue-600" />
-                        </div>
-                        <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                            HeartGuide PRD
-                        </h3>
-                        <p className="text-slate-600 mb-4">
-                            Requirements for AI-powered heart failure readmission prevention.
-                        </p>
-                        <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm">
-                            Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                    </motion.a>
+                        <h2 className="font-display text-4xl font-bold text-slate-900 mb-8 text-center">
+                            About Me
+                        </h2>
 
-                    <motion.a
-                        href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/BreathEasy-AI-PRD.md"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
-                    >
-                        <div className="bg-cyan-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cyan-100 transition-colors">
-                            <FileText className="w-7 h-7 text-cyan-600" />
-                        </div>
-                        <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">
-                            BreathEasy PRD
-                        </h3>
-                        <p className="text-slate-600 mb-4">
-                            Specs for smart asthma management with environmental trigger prediction.
-                        </p>
-                        <div className="flex items-center gap-2 text-cyan-600 font-semibold text-sm">
-                            Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                    </motion.a>
+                        <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                I'm a physician with a Master's in Biomedical Engineering, transitioning into AI Product Management in healthcare.
+                                I combine deep clinical expertise with technical skills in AI/ML to build products that truly address healthcare challenges.
+                            </p>
 
-                    <motion.a
-                        href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Sword-Health-Teardown.md"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
-                    >
-                        <div className="bg-purple-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-100 transition-colors">
-                            <Search className="w-7 h-7 text-purple-600" />
-                        </div>
-                        <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
-                            Sword Health Teardown
-                        </h3>
-                        <p className="text-slate-600 mb-4">
-                            Deep dive into the digital MSK care market and sensor technology.
-                        </p>
-                        <div className="flex items-center gap-2 text-purple-600 font-semibold text-sm">
-                            Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                    </motion.a>
+                            <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 mb-3">Education</h3>
+                                    <ul className="space-y-2 text-slate-600">
+                                        <li>• MD - Universidade do Porto</li>
+                                        <li>• MSc Biomedical Engineering - IST Lisboa</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 mb-3">Technical Skills</h3>
+                                    <ul className="space-y-2 text-slate-600">
+                                        <li>• Python, TensorFlow, PyTorch</li>
+                                        <li>• React, TypeScript, Tailwind</li>
+                                        <li>• Product Strategy & PRD Writing</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                    <motion.a
-                        href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Omada-Health-Teardown.md"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
-                    >
-                        <div className="bg-emerald-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
-                            <Search className="w-7 h-7 text-emerald-600" />
+                            <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-200">
+                                <a
+                                    href="https://linkedin.com/in/fmmpinheiro"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
+                                >
+                                    <Linkedin className="w-5 h-5" />
+                                    <span className="font-medium">LinkedIn</span>
+                                </a>
+                                <a
+                                    href="https://github.com/fpinheiropt"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
+                                >
+                                    <Github className="w-5 h-5" />
+                                    <span className="font-medium">GitHub</span>
+                                </a>
+                                <a
+                                    href="mailto:fpinheiro921@gmail.com"
+                                    className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
+                                >
+                                    <Mail className="w-5 h-5" />
+                                    <span className="font-medium">Email</span>
+                                </a>
+                            </div>
                         </div>
-                        <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
-                            Omada Health Teardown
-                        </h3>
-                        <p className="text-slate-600 mb-4">
-                            Analysis of "Virtual First" care and frictionless hardware.
-                        </p>
-                        <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm">
-                            Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                    </motion.a>
+                    </motion.div>
                 </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-slate-900 text-white py-12">
+                <div className="max-w-7xl mx-auto px-6 text-center">
+                    <p className="text-slate-400 mb-4">
+                        © 2025 Francisco Pinheiro. Built with React, TypeScript, and Tailwind CSS.
+                    </p>
+                    <p className="text-slate-500 text-sm italic">
+                        "The future of healthcare is at the intersection of clinical expertise and artificial intelligence."
+                    </p>
+                </div>
+            </footer>
         </div>
-            </section >
-
-        {/* About Section */ }
-        < section className = "py-24 bg-gradient-to-br from-slate-50 to-white" >
-            <div className="max-w-4xl mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="font-display text-4xl font-bold text-slate-900 mb-8 text-center">
-                        About Me
-                    </h2>
-
-                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-                        <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                            I'm a physician with a Master's in Biomedical Engineering, transitioning into AI Product Management in healthcare.
-                            I combine deep clinical expertise with technical skills in AI/ML to build products that truly address healthcare challenges.
-                        </p>
-
-                        <div className="grid sm:grid-cols-2 gap-6 mb-8">
-                            <div>
-                                <h3 className="font-semibold text-slate-900 mb-3">Education</h3>
-                                <ul className="space-y-2 text-slate-600">
-                                    <li>• MD - Universidade do Porto</li>
-                                    <li>• MSc Biomedical Engineering - IST Lisboa</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 className="font-semibold text-slate-900 mb-3">Technical Skills</h3>
-                                <ul className="space-y-2 text-slate-600">
-                                    <li>• Python, TensorFlow, PyTorch</li>
-                                    <li>• React, TypeScript, Tailwind</li>
-                                    <li>• Product Strategy & PRD Writing</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-200">
-                            <a
-                                href="https://linkedin.com/in/fmmpinheiro"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
-                            >
-                                <Linkedin className="w-5 h-5" />
-                                <span className="font-medium">LinkedIn</span>
-                            </a>
-                            <a
-                                href="https://github.com/fpinheiropt"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
-                            >
-                                <Github className="w-5 h-5" />
-                                <span className="font-medium">GitHub</span>
-                            </a>
-                            <a
-                                href="mailto:fpinheiro921@gmail.com"
-                                className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
-                            >
-                                <Mail className="w-5 h-5" />
-                                <span className="font-medium">Email</span>
-                            </a>
-                        </div>
-                    </div>
-                </motion.div>
-            </div>
-            </section >
-
-        {/* Footer */ }
-        < footer className = "bg-slate-900 text-white py-12" >
-            <div className="max-w-7xl mx-auto px-6 text-center">
-                <p className="text-slate-400 mb-4">
-                    © 2025 Francisco Pinheiro. Built with React, TypeScript, and Tailwind CSS.
-                </p>
-                <p className="text-slate-500 text-sm italic">
-                    "The future of healthcare is at the intersection of clinical expertise and artificial intelligence."
-                </p>
-            </div>
-            </footer >
-        </div >
     );
 }
 
