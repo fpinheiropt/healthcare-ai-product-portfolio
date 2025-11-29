@@ -184,7 +184,7 @@ function App() {
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <motion.a
                             href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/HeartGuide-AI-PRD.md"
                             target="_blank"
@@ -199,12 +199,36 @@ function App() {
                                 <FileText className="w-7 h-7 text-blue-600" />
                             </div>
                             <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                HeartGuide AI PRD
+                                HeartGuide PRD
                             </h3>
                             <p className="text-slate-600 mb-4">
-                                Comprehensive Product Requirements Document for an AI-powered heart failure readmission prevention system.
+                                Requirements for AI-powered heart failure readmission prevention.
                             </p>
                             <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                                Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </motion.a>
+
+                        <motion.a
+                            href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/BreathEasy-AI-PRD.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                        >
+                            <div className="bg-cyan-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cyan-100 transition-colors">
+                                <FileText className="w-7 h-7 text-cyan-600" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">
+                                BreathEasy PRD
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                Specs for smart asthma management with environmental trigger prediction.
+                            </p>
+                            <div className="flex items-center gap-2 text-cyan-600 font-semibold text-sm">
                                 Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </motion.a>
@@ -216,7 +240,7 @@ function App() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
                             className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
                         >
                             <div className="bg-purple-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-100 transition-colors">
@@ -226,7 +250,7 @@ function App() {
                                 Sword Health Teardown
                             </h3>
                             <p className="text-slate-600 mb-4">
-                                Deep dive into the digital MSK care market, analyzing Sword Health's sensor technology and business model.
+                                Deep dive into the digital MSK care market and sensor technology.
                             </p>
                             <div className="flex items-center gap-2 text-purple-600 font-semibold text-sm">
                                 Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -240,7 +264,7 @@ function App() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
                             className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
                         >
                             <div className="bg-emerald-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
@@ -250,7 +274,7 @@ function App() {
                                 Omada Health Teardown
                             </h3>
                             <p className="text-slate-600 mb-4">
-                                Analysis of the "Virtual First" care model and how frictionless hardware drives patient adherence.
+                                Analysis of "Virtual First" care and frictionless hardware.
                             </p>
                             <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm">
                                 Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

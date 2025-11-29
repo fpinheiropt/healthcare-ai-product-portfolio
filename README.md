@@ -69,8 +69,9 @@ In-depth analyses of 10+ healthcare AI products, including:
 - Hello Heart
 - And more...
 
-### 3. [Heart Failure Readmission Prevention PRD](project-2-prd/HeartGuide-AI-PRD.md)
-Professional product requirements document for an AI-powered solution to reduce 30-day readmissions in heart failure patients.
+### 3. Product Requirements Documents (PRDs)
+- **[Heart Failure Readmission Prevention](project-2-prd/HeartGuide-AI-PRD.md)**: AI-powered solution to reduce 30-day readmissions.
+- **[BreathEasy AI (Asthma)](project-2-prd/BreathEasy-AI-PRD.md)**: Smart asthma management with environmental trigger prediction.
 
 ## 📚 Education & Certifications
 
