@@ -40,7 +40,7 @@ I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineer
 
 ## 🚀 Current Projects
 
-### 🌐 [View Live Portfolio](https://portfolio-website-franciscos-projects-73f8717a.vercel.app](https://portfolio-website-indol-mu-23.vercel.app/)
+### 🌐 [View Live Portfolio](https://portfolio-website-indol-mu-23.vercel.app/)
 
 ### 1. AI Healthcare Product MVPs (LIVE)
 
