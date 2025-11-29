@@ -42,20 +42,37 @@ I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineer
 
 ## 🚀 Current Projects
 
-### 1. Healthcare AI Product Teardowns
+### 🌐 [View Live Portfolio](https://portfolio-website-franciscos-projects-73f8717a.vercel.app)
+
+### 1. AI Healthcare Product MVPs (LIVE)
+
+#### 💓 [HeartGuide AI](https://heartguide-ai.vercel.app)
+AI-powered clinical decision support system reducing 30-day heart failure readmissions through real-time monitoring and predictive analytics.
+- **Tech Stack**: React, TypeScript, Tailwind CSS, Framer Motion
+- **Features**: Risk prediction, patient monitoring, provider dashboard
+- **Status**: ✅ Deployed on Vercel
+
+#### 🫁 [BreathEasy AI](https://breatheasy-ai.vercel.app)
+Intelligent asthma management platform with environmental monitoring, peak flow tracking, and exacerbation prediction.
+- **Tech Stack**: React, TypeScript, Tailwind CSS, Recharts
+- **Features**: Peak flow tracking, environmental alerts, AI care assistant
+- **Status**: ✅ Deployed on Vercel
+
+#### 💉 [GlucoWise AI](https://glucowise-ai.vercel.app)
+Type 2 diabetes coaching platform combining continuous glucose insights with personalized AI-driven lifestyle recommendations.
+- **Tech Stack**: React, TypeScript, Tailwind CSS
+- **Features**: Glucose tracking, meal logging, personalized insights
+- **Status**: ✅ Deployed on Vercel
+
+### 2. Healthcare AI Product Teardowns
 In-depth analyses of 10+ healthcare AI products, including:
 - Sword Health
 - Omada Health
 - Hello Heart
 - And more...
 
-### 2. Heart Failure Readmission Prevention PRD (Coming Soon)
+### 3. Heart Failure Readmission Prevention PRD (Coming Soon)
 Professional product requirements document for an AI-powered solution to reduce 30-day readmissions in heart failure patients.
-
-### 3. AI Healthcare Product MVPs (Coming Soon)
-- **HeartGuide AI**: Heart failure readmission prevention
-- **GlucoWise AI**: Type 2 diabetes management coach
-- **BreathEasy AI**: COPD exacerbation early warning system
 
 ## 📚 Education & Certifications
 
