@@ -56,22 +56,21 @@ Intelligent asthma management platform with environmental monitoring, peak flow 
 - **Features**: Peak flow tracking, environmental alerts, AI care assistant
 - **Status**: ✅ Deployed on Vercel
 
-#### 💉 [GlucoWise AI](https://glucowise-ai.vercel.app)
-Type 2 diabetes coaching platform combining continuous glucose insights with personalized AI-driven lifestyle recommendations.
-- **Tech Stack**: React, TypeScript, Tailwind CSS
-- **Features**: Glucose tracking, meal logging, personalized insights
-- **Status**: ✅ Deployed on Vercel
-
-### 2. Healthcare AI Product Teardowns
-In-depth analyses of 10+ healthcare AI products, including:
-- **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Deep dive into the future of digital MSK care.
-- **[Omada Health](project-1-teardowns/Omada-Health-Teardown.md)**: The pioneer of "Virtual First" chronic care.
-- Hello Heart
-- And more...
-
 ### 3. Product Requirements Documents (PRDs)
 - **[Heart Failure Readmission Prevention](project-2-prd/HeartGuide-AI-PRD.md)**: AI-powered solution to reduce 30-day readmissions.
 - **[BreathEasy AI (Asthma)](project-2-prd/BreathEasy-AI-PRD.md)**: Smart asthma management with environmental trigger prediction.
+
+## 📝 Blog Posts & Insights
+
+- **[Building 3 AI Healthcare MVPs in 3 Weeks](blog-posts/2025-11-29-building-3-ai-mvps.md)**: A product manager's journey from concept to deployment
+- **[Sword Health Deep Dive](blog-posts/2025-11-15-sword-health-deep-dive.md)**: Analysis of the digital MSK care market leader
+
+## 🔍 Product Teardowns
+
+- **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Deep dive into the future of digital MSK care
+- **[Omada Health](project-1-teardowns/Omada-Health-Teardown.md)**: The pioneer of "Virtual First" chronic care
+- **[Hello Heart](project-1-teardowns/Hello-Heart-Teardown.md)**: Frictionless cardiovascular health monitoring
+
 
 ## 📚 Education & Certifications
 
