@@ -235,6 +235,30 @@ function App() {
                         </motion.a>
 
                         <motion.a
+                            href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-2-prd/GlucoWise-AI-PRD.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.15 }}
+                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                        >
+                            <div className="bg-indigo-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-100 transition-colors">
+                                <FileText className="w-7 h-7 text-indigo-600" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                                GlucoWise PRD
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                Specs for AI-driven diabetes coaching and lifestyle management.
+                            </p>
+                            <div className="flex items-center gap-2 text-indigo-600 font-semibold text-sm">
+                                Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </motion.a>
+
+                        <motion.a
                             href="https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Sword-Health-Teardown.md"
                             target="_blank"
                             rel="noopener noreferrer"

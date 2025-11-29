@@ -59,6 +59,7 @@ Intelligent asthma management platform with environmental monitoring, peak flow 
 ### 3. Product Requirements Documents (PRDs)
 - **[Heart Failure Readmission Prevention](project-2-prd/HeartGuide-AI-PRD.md)**: AI-powered solution to reduce 30-day readmissions.
 - **[BreathEasy AI (Asthma)](project-2-prd/BreathEasy-AI-PRD.md)**: Smart asthma management with environmental trigger prediction.
+- **[GlucoWise AI (Diabetes)](project-2-prd/GlucoWise-AI-PRD.md)**: Intelligent coaching platform for Type 2 diabetes lifestyle management.
 
 ## 📝 Blog Posts & Insights
 
