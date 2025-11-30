@@ -2,6 +2,7 @@ import React from 'react';
 import { Patient, RiskLevel } from '../../types';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Area, AreaChart } from 'recharts';
 import { AlertTriangle, TrendingUp, Users, Activity, ChevronRight, Search, Filter, Bell } from 'lucide-react';
+import { RiskSimulator } from './RiskSimulator';
 
 interface ProviderDashboardProps {
   patients: Patient[];
@@ -187,6 +188,11 @@ export const ProviderDashboard: React.FC<ProviderDashboardProps> = ({ patients, 
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
+              </div>
+
+              {/* AI Risk Simulator */}
+              <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <RiskSimulator patient={selectedPatient} />
               </div>
 
               <div className="grid grid-cols-2 gap-8">

@@ -46,8 +46,14 @@ I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineer
 
 #### 💓 [HeartGuide AI](https://heartguide-ai.vercel.app)
 AI-powered clinical decision support system reducing 30-day heart failure readmissions through real-time monitoring and predictive analytics.
-- **Tech Stack**: React, TypeScript, Tailwind CSS, Framer Motion
-- **Features**: Risk prediction, patient monitoring, provider dashboard
+- **Tech Stack**: React, TypeScript, Tailwind CSS, Framer Motion, scikit-learn
+- **Features**: 
+  - ⭐ **Interactive AI Risk Simulator** (NEW): Real-time "what-if" analysis using trained ML model (85.3% accuracy)
+  - Risk prediction dashboard with patient queue
+  - Real-time weight monitoring with threshold alerts
+  - Medication adherence tracking
+  - AI chat assistant powered by Gemini
+- **ML Model**: Logistic Regression trained on 918 heart disease cases
 - **Status**: ✅ Deployed on Vercel
 
 #### 🫁 [BreathEasy AI](https://breatheasy-ai.vercel.app)
