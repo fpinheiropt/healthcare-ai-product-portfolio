@@ -5,6 +5,7 @@ import { Plus, Bell, TrendingUp, Activity, Pill, AlertTriangle, Calendar, Drople
 import GlucoseChart from './GlucoseChart';
 import FoodLogger from './FoodLogger';
 import { GlucoseReading, GlucoseContext, Medication } from '../types';
+import { MealPredictor } from './MealPredictor';
 import { getGlucoseInsights } from '../services/geminiService';
 
 // Mock Data
@@ -164,53 +165,7 @@ const PatientDashboard: React.FC = () => {
               </div>
 
               {/* Glucose Prediction Simulator */}
-              <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/10">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp size={16} className="text-teal-200" />
-                    <span className="text-sm font-medium text-teal-50">Glucose Predictor</span>
-                  </div>
-                  <div className="bg-white/60 backdrop-blur-sm border border-white/20 px-3 py-1 rounded-full text-xs font-semibold text-slate-700">
-                    Est. A1C: {estimatedA1C}%
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between text-xs text-teal-100 mb-1.5">
-                      <span>Carb Intake</span>
-                      <span className="font-bold">50g</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={0}
-                      max={100}
-                      defaultValue={50}
-                      className="w-full h-1.5 bg-teal-900/30 rounded-full appearance-none cursor-pointer accent-white"
-                    />
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs text-teal-100 mb-1.5">
-                      <span>Activity Level</span>
-                      <span className="font-bold">5/10</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={1}
-                      max={10}
-                      defaultValue={5}
-                      className="w-full h-1.5 bg-teal-900/30 rounded-full appearance-none cursor-pointer accent-white"
-                    />
-                  </div>
-
-                  <div className="pt-2 border-t border-white/10 flex justify-between items-center">
-                    <span className="text-xs text-teal-200">Predicted Range:</span>
-                    <span className="text-sm font-bold text-emerald-300">
-                      {currentVal - 20} - {currentVal + 20} mg/dL
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <MealPredictor currentGlucose={currentVal} />
             </div>
 
             {/* Quick Actions */}
