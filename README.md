@@ -12,7 +12,8 @@
 
 - 🏥 **Analyzing 10 healthcare AI products** to understand product strategy patterns
 - 📄 **Writing professional PRDs** with clinical user research (cardiologists, endocrinologists, pulmonologists)
-- 🤖 **Building 3 AI healthcare product MVPs**: HeartGuide AI, GlucoWise AI, and BreathEasy AI
+- 🤖 **Building 3 AI healthcare product MVPs**: HeartGuide AI, GlucoWise AI, and BreathEasy AI (All Deployed)
+- 💼 **Interactive "CVe"**: A printable, portfolio-integrated resume system
 - 📝 **Publishing weekly blog posts** documenting my MD + AI PM journey
 - 🎓 **Completing EDIT Data Science & Advanced AI bootcamps** (Future Plan)
 
@@ -40,27 +41,33 @@ I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineer
 
 ## 🚀 Current Projects
 
-### 🌐 [View Live Portfolio](https://portfolio-website-indol-mu-23.vercel.app/)
+### 🌐 [View Live Portfolio](https://portfolio-website-franciscos-projects-73f8717a.vercel.app/)
 
 ### 1. AI Healthcare Product MVPs (LIVE)
 
-#### 💓 [HeartGuide AI](https://heartguide-ai.vercel.app)
-AI-powered clinical decision support system reducing 30-day heart failure readmissions through real-time monitoring and predictive analytics.
-- **Tech Stack**: React, TypeScript, Tailwind CSS, Framer Motion, scikit-learn
+#### 💓 [HeartGuide AI](https://heartguide-ai.vercel.app/)
+AI-powered clinical decision support system reducing 30-day heart failure readmissions.
 - **Features**: 
-  - ⭐ **Interactive AI Risk Simulator** (NEW): Real-time "what-if" analysis using trained ML model (85.3% accuracy)
-  - Risk prediction dashboard with patient queue
-  - Real-time weight monitoring with threshold alerts
-  - Medication adherence tracking
-  - AI chat assistant powered by Gemini
-- **ML Model**: Logistic Regression trained on 918 heart disease cases
-- **Status**: ✅ Deployed on Vercel
+  - ⭐ **Interactive Risk Simulator**: Real-time Monte Carlo simulation of patient risk.
+  - 🏗️ **System Architecture View**: Interactive modal showing the "Frontend -> API -> ML" pipeline.
+  - **Tech Stack**: React, Python (FastAPI), TensorFlow Lite, PostgreSQL.
+- **Status**: ✅ Deployed
 
-#### 🫁 [BreathEasy AI](https://breatheasy-ai.vercel.app)
-Intelligent asthma management platform with environmental monitoring, peak flow tracking, and exacerbation prediction.
-- **Tech Stack**: React, TypeScript, Tailwind CSS, Recharts
-- **Features**: Peak flow tracking, environmental alerts, AI care assistant
-- **Status**: ✅ Deployed on Vercel
+#### 🫁 [BreathEasy AI](https://breatheasy-ai.vercel.app/)
+Intelligent asthma management platform with environmental trigger prediction.
+- **Features**:
+  - ⭐ **Environmental Simulator**: Real-time AQI & Weather trigger impact analysis.
+  - 🏗️ **System Architecture View**: Detailed visualizations of the data ingestion pipeline.
+  - **Tech Stack**: Next.js, Redis (Geo-spatial caching), Scikit-learn, OpenWeather API.
+- **Status**: ✅ Deployed
+
+#### 🩸 [GlucoWise AI](https://glucowise-ai.vercel.app/)
+Metabolic health platform for Type 2 diabetes management.
+- **Features**:
+  - ⭐ **Meal Predictor**: Computer Vision + ML to predict glucose spikes from food inputs.
+  - 🏗️ **System Architecture View**: Full-stack schema including XGBoost model integration.
+  - **Tech Stack**: React, Node.js, XGBoost, MongoDB.
+- **Status**: ✅ Deployed
 
 ### 3. Product Requirements Documents (PRDs)
 - **[Heart Failure Readmission Prevention](project-2-prd/HeartGuide-AI-PRD.md)**: AI-powered solution to reduce 30-day readmissions.
