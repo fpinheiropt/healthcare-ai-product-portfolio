@@ -16,8 +16,23 @@
 body {
   margin: 0;
   min-height: 100vh;
+  @apply bg-slate-50 text-slate-900 transition-colors duration-300;
 }
 
-* {
-  box-sizing: border-box;
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800/50 shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 dark:bg-slate-800/60 backdrop-blur-lg border border-white/30 dark:border-slate-700/30 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-blue-600 dark:from-teal-400 dark:to-blue-400;
+  }
 }

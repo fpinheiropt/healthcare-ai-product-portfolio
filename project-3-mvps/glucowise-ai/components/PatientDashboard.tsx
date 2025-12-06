@@ -164,9 +164,10 @@ const PatientDashboard: React.FC = () => {
                 </div>
               </div>
 
-              {/* Glucose Prediction Simulator */}
-              <MealPredictor currentGlucose={currentVal} />
             </div>
+
+            {/* Glucose Prediction Simulator */}
+            <MealPredictor currentGlucose={currentVal} />
 
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-4">

@@ -3,7 +3,7 @@ import AIChatInterface from './AIChatInterface';
 import RecentActivityLog from './RecentActivityLog';
 import { Patient, WeatherData, DailyLog, Medication, Zone } from '../types';
 
-
+import { EnvironmentalTrigger } from './EnvironmentalTrigger';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { AlertTriangle, Wind, Activity, Thermometer, Phone, Pill, CheckCircle, PlusCircle, Clock, ChevronDown, ChevronUp, AlertCircle, TrendingUp, Heart, Utensils, BookOpen, MessageSquare, Check, Info } from 'lucide-react';
 
@@ -112,28 +112,8 @@ const PatientDashboard: React.FC<Props> = ({ patient, weather, onAddLog, onTakeM
       <div className="flex-1 overflow-y-auto pb-24 scroll-smooth">
         {activeTab === 'home' && (
           <div className="p-5 space-y-6">
-            {/* Environmental Card */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-medical-100 flex items-center justify-between overflow-x-auto">
-              <div className="flex items-center gap-3 min-w-max pr-4">
-                <div className={`p-2 rounded-full ${weather.aqi > 100 ? 'bg-orange-100 text-orange-600' : 'bg-green-100 text-green-600'}`}>
-                  <Wind size={24} />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 uppercase font-semibold">Air Quality</p>
-                  <p className="font-bold text-gray-900">{weather.aqi} AQI ({weather.aqi < 50 ? 'Good' : 'Moderate'})</p>
-                </div>
-              </div>
-              <div className="h-8 w-px bg-gray-200 mx-2"></div>
-              <div className="flex items-center gap-3 min-w-max pr-4">
-                <div className="p-2 rounded-full bg-blue-100 text-blue-600">
-                  <Thermometer size={24} />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 uppercase font-semibold">Weather</p>
-                  <p className="font-bold text-gray-900">{weather.temperature}°F {weather.condition}</p>
-                </div>
-              </div>
-            </div>
+            {/* Environmental Trigger Simulator */}
+            <EnvironmentalTrigger className="mb-6" />
 
             {/* Current Status Zone - Matching HeartGuide AI */}
             <div className="bg-gradient-to-br from-teal-600 to-teal-800 rounded-3xl p-6 text-white shadow-xl shadow-teal-900/20 relative overflow-hidden">

@@ -1,46 +1,54 @@
 import { motion } from 'framer-motion';
 import { Heart, Wind, Droplet, Github, Linkedin, Mail, ExternalLink, ArrowRight, FileText, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import { resumeData } from '../data/resume';
 
 function Home() {
     const projects = [
         {
             id: 'heartguide',
             name: 'HeartGuide AI',
-            tagline: 'Heart Failure Readmission Prevention',
-            description: 'AI-powered clinical decision support system reducing 30-day readmissions through real-time monitoring and predictive analytics.',
+            tagline: 'AI-Driven Heart Failure Risk Engine',
+            description: 'Clinical decision support system featuring a Monte Carlo readmission simulator to visualize patient risk reduction.',
             icon: Heart,
             color: 'from-red-500 to-pink-600',
-            url: 'https://heartguide-ai.vercel.app',
-            features: ['Risk Prediction', 'Patient Monitoring', 'Provider Dashboard']
+            url: 'https://heartguide-ai.vercel.app/',
+            features: ['Risk Simulator', 'Patient Monitoring', 'Intervention Modeling']
         },
         {
             id: 'breatheasy',
             name: 'BreathEasy AI',
-            tagline: 'Smart Asthma Management',
-            description: 'Intelligent asthma management platform with environmental monitoring, peak flow tracking, and exacerbation prediction.',
+            tagline: 'Environmental Asthma Trigger Simulator',
+            description: 'Real-time asthma risk simulation combining clinical vulnerability with environmental data (AQI, Pollen, Weather).',
             icon: Wind,
             color: 'from-teal-500 to-cyan-600',
-            url: 'https://breatheasy-ai.vercel.app',
-            features: ['Peak Flow Tracking', 'Environmental Alerts', 'AI Care Assistant']
+            url: 'https://breatheasy-ai.vercel.app/',
+            features: ['Trigger Simulator', 'Environmental Risk', 'Vulnerability Profiler']
         },
         {
             id: 'glucowise',
             name: 'GlucoWise AI',
-            tagline: 'Intelligent Glucose Monitoring',
-            description: 'Type 2 diabetes coaching platform combining continuous glucose insights with personalized AI-driven lifestyle recommendations.',
+            tagline: 'Metabolic Impact Predictor',
+            description: 'Diabetes management with a predictive engine that simulates glucose response to specific meals and insulin doses.',
             icon: Droplet,
             color: 'from-blue-500 to-indigo-600',
-            url: 'https://glucowise-ai.vercel.app',
-            features: ['Glucose Tracking', 'Meal Logging', 'Personalized Insights']
+            url: 'https://glucowise-ai.vercel.app/',
+            features: ['Meal Simulator', 'Glucose Prediction', 'Metabolic Scoring']
         }
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+            <div className="print:hidden">
+                <Navbar />
+            </div>
             {/* Hero Section */}
-            <section className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50 opacity-60"></div>
+            <section id="home" className="relative overflow-hidden pt-16 print:hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 opacity-60 dark:opacity-40"></div>
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-teal-500/10 rounded-full blur-[120px] animate-pulse"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+
                 <div className="relative max-w-7xl mx-auto px-6 py-24 sm:py-32">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -48,20 +56,20 @@ function Home() {
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 mb-8">
+                        <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-8">
                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm font-medium text-slate-700">Available for Product Roles</span>
+                            <span className="text-sm font-medium text-slate-700 dark:text-slate-200">Available for Product Roles</span>
                         </div>
 
-                        <h1 className="font-display text-5xl sm:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
+                        <h1 className="font-display text-5xl sm:text-7xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
                             Francisco Pinheiro
                         </h1>
 
-                        <p className="text-2xl sm:text-3xl text-slate-600 mb-4 font-medium">
+                        <p className="text-2xl sm:text-3xl text-slate-600 dark:text-slate-300 mb-4 font-medium">
                             MD Building AI Healthcare Products
                         </p>
 
-                        <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-12">
+                        <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-12">
                             Bridging clinical medicine, AI/ML engineering, and product thinking to build solutions that truly address healthcare challenges.
                         </p>
 
@@ -77,7 +85,7 @@ function Home() {
                                 href="https://linkedin.com/in/fmmpinheiro"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all border border-slate-200 shadow-sm"
+                                className="inline-flex items-center gap-2 glass-card text-slate-700 dark:text-slate-200 px-8 py-4 rounded-xl font-semibold hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all"
                             >
                                 <Linkedin className="w-5 h-5" />
                                 Connect
@@ -88,7 +96,7 @@ function Home() {
             </section>
 
             {/* Projects Section */}
-            <section id="projects" className="py-24 bg-white">
+            <section id="projects" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300 print:hidden">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -97,10 +105,10 @@ function Home() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+                        <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
                             AI Healthcare Products
                         </h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
                             Full-stack MVP applications demonstrating product strategy, clinical expertise, and technical execution.
                         </p>
                     </motion.div>
@@ -115,25 +123,25 @@ function Home() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="group relative bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all duration-300"
+                                    className="group relative glass-card overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-teal-900/10 dark:hover:shadow-teal-900/20 transition-all duration-300"
                                 >
                                     {/* Gradient Header */}
-                                    <div className={`h-32 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                                    <div className={`h-32 bg-gradient-to-br ${project.color} relative overflow-hidden group-hover:scale-110 transition-transform duration-500`}>
                                         <div className="absolute inset-0 bg-black/10"></div>
-                                        <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-3 rounded-xl">
+                                        <div className="absolute top-4 right-4 glass-panel p-3 rounded-xl shadow-lg">
                                             <Icon className="w-8 h-8 text-white" />
                                         </div>
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-6">
-                                        <h3 className="font-display text-2xl font-bold text-slate-900 mb-2">
+                                    <div className="p-6 relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
+                                        <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                                             {project.name}
                                         </h3>
-                                        <p className="text-sm font-semibold text-teal-600 mb-3">
+                                        <p className="text-sm font-semibold text-teal-600 dark:text-teal-400 mb-3">
                                             {project.tagline}
                                         </p>
-                                        <p className="text-slate-600 mb-4 leading-relaxed">
+                                        <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                                             {project.description}
                                         </p>
 
@@ -142,7 +150,7 @@ function Home() {
                                             {project.features.map((feature) => (
                                                 <span
                                                     key={feature}
-                                                    className="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium"
+                                                    className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full font-medium"
                                                 >
                                                     {feature}
                                                 </span>
@@ -154,7 +162,7 @@ function Home() {
                                             href={project.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:text-teal-700 group-hover:gap-3 transition-all"
+                                            className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 group-hover:gap-3 transition-all active:scale-95 origin-left"
                                         >
                                             Launch App
                                             <ExternalLink className="w-4 h-4" />
@@ -168,7 +176,7 @@ function Home() {
             </section>
 
             {/* Product Thinking Section */}
-            <section className="py-24 bg-slate-50">
+            <section id="thinking" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 print:hidden">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -177,10 +185,10 @@ function Home() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+                        <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
                             Product Thinking
                         </h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
                             Deep dives into market analysis, product strategy, and requirements definition.
                         </p>
                     </motion.div>
@@ -191,54 +199,54 @@ function Home() {
                         {/* PRDs */}
                         <Link
                             to="/documents/heartguide-prd"
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="glass-card p-8 group"
                         >
-                            <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
-                                <FileText className="w-7 h-7 text-blue-600" />
+                            <div className="bg-blue-50 dark:bg-blue-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
+                                <FileText className="w-7 h-7 text-blue-600 dark:text-blue-400" />
                             </div>
-                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 HeartGuide PRD
                             </h3>
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-600 dark:text-slate-400 mb-4">
                                 Requirements for AI-powered heart failure readmission prevention.
                             </p>
-                            <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                            <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold text-sm">
                                 Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </Link>
 
                         <Link
                             to="/documents/breatheasy-prd"
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="glass-card p-8 group"
                         >
-                            <div className="bg-cyan-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cyan-100 transition-colors">
-                                <FileText className="w-7 h-7 text-cyan-600" />
+                            <div className="bg-cyan-50 dark:bg-cyan-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cyan-100 dark:group-hover:bg-cyan-900/50 transition-colors">
+                                <FileText className="w-7 h-7 text-cyan-600 dark:text-cyan-400" />
                             </div>
-                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">
+                            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                                 BreathEasy PRD
                             </h3>
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-600 dark:text-slate-400 mb-4">
                                 Specs for smart asthma management with environmental trigger prediction.
                             </p>
-                            <div className="flex items-center gap-2 text-cyan-600 font-semibold text-sm">
+                            <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-semibold text-sm">
                                 Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </Link>
 
                         <Link
                             to="/documents/glucowise-prd"
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="glass-card p-8 group"
                         >
-                            <div className="bg-indigo-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-100 transition-colors">
-                                <FileText className="w-7 h-7 text-indigo-600" />
+                            <div className="bg-indigo-50 dark:bg-indigo-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/50 transition-colors">
+                                <FileText className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />
                             </div>
-                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                                 GlucoWise PRD
                             </h3>
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-600 dark:text-slate-400 mb-4">
                                 Specs for AI-driven diabetes coaching and lifestyle management.
                             </p>
-                            <div className="flex items-center gap-2 text-indigo-600 font-semibold text-sm">
+                            <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold text-sm">
                                 Read Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </Link>
@@ -246,54 +254,54 @@ function Home() {
                         {/* Teardowns */}
                         <Link
                             to="/documents/sword-teardown"
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="glass-card p-8 group"
                         >
-                            <div className="bg-purple-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-100 transition-colors">
-                                <Search className="w-7 h-7 text-purple-600" />
+                            <div className="bg-purple-50 dark:bg-purple-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50 transition-colors">
+                                <Search className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                             </div>
-                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                                 Sword Health
                             </h3>
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-600 dark:text-slate-400 mb-4">
                                 Digital MSK care market analysis.
                             </p>
-                            <div className="flex items-center gap-2 text-purple-600 font-semibold text-sm">
+                            <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-semibold text-sm">
                                 Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </Link>
 
                         <Link
                             to="/documents/omada-teardown"
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="glass-card p-8 group"
                         >
-                            <div className="bg-emerald-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
-                                <Search className="w-7 h-7 text-emerald-600" />
+                            <div className="bg-emerald-50 dark:bg-emerald-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50 transition-colors">
+                                <Search className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
                             </div>
-                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                                 Omada Health
                             </h3>
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-600 dark:text-slate-400 mb-4">
                                 "Virtual First" chronic care pioneer.
                             </p>
-                            <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm">
+                            <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
                                 Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </Link>
 
                         <Link
                             to="/documents/hello-heart-teardown"
-                            className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                            className="glass-card p-8 group"
                         >
-                            <div className="bg-red-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-100 transition-colors">
-                                <Search className="w-7 h-7 text-red-600" />
+                            <div className="bg-red-50 dark:bg-red-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-100 dark:group-hover:bg-red-900/50 transition-colors">
+                                <Search className="w-7 h-7 text-red-600 dark:text-red-400" />
                             </div>
-                            <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition-colors">
+                            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
                                 Hello Heart
                             </h3>
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-600 dark:text-slate-400 mb-4">
                                 Frictionless cardiovascular health monitoring.
                             </p>
-                            <div className="flex items-center gap-2 text-red-600 font-semibold text-sm">
+                            <div className="flex items-center gap-2 text-red-600 dark:text-red-400 font-semibold text-sm">
                                 Read Analysis <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </Link>
@@ -303,48 +311,154 @@ function Home() {
             </section>
 
             {/* About Section */}
-            <section className="py-24 bg-gradient-to-br from-slate-50 to-white">
-                <div className="max-w-4xl mx-auto px-6">
+            <section id="about" className="py-24 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 transition-colors duration-300 print:bg-white print:py-0">
+                <div className="max-w-6xl mx-auto px-6 print:px-0 print:max-w-none">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="font-display text-4xl font-bold text-slate-900 mb-8 text-center">
-                            About Me
-                        </h2>
+                        <div className="flex flex-col md:flex-row justify-between items-center mb-12 print:hidden">
+                            <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-white">
+                                About Me
+                            </h2>
+                            <button
+                                onClick={() => window.print()}
+                                className="mt-4 md:mt-0 inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-2.5 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg active:scale-95"
+                            >
+                                <FileText className="w-4 h-4" />
+                                Download CV
+                            </button>
+                        </div>
 
-                        <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-                            <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                                I'm a physician with a Master's in Biomedical Engineering, transitioning into AI Product Management in healthcare.
-                                I combine deep clinical expertise with technical skills in AI/ML to build products that truly address healthcare challenges.
+                        {/* Print Header (Only visible when printing) */}
+                        <div className="hidden print:block mb-8 border-b-2 border-slate-900 pb-4">
+                            <h1 className="text-3xl font-bold text-slate-900">Francisco Pinheiro</h1>
+                            <p className="text-lg text-slate-600">MD • Biomedical Engineer • AI Product Manager</p>
+                            <div className="flex gap-4 mt-2 text-sm text-slate-500">
+                                <span>fpinheiro921@gmail.com</span>
+                                <span>linkedin.com/in/fmmpinheiro</span>
+                                <span>github.com/fpinheiropt</span>
+                            </div>
+                        </div>
+
+                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-16 text-center print:text-left print:mb-8 print:text-base print:max-w-none">
+                            Bridging clinical medicine, AI/ML engineering, and product thinking to build solutions that truly address healthcare challenges.
+                        </p>
+
+                        {/* Bio Card */}
+                        <div className="glass-card p-8 mb-12 print:shadow-none print:border-none print:p-0 print:mb-8">
+                            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed print:text-base print:text-slate-800">
+                                {resumeData.bio}
                             </p>
+                        </div>
 
-                            <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                        {/* Work Experience Timeline */}
+                        <div className="mb-16 print:mb-8">
+                            <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-8 print:text-xl print:mb-4">Work Experience</h3>
+                            <div className="space-y-6 print:space-y-4">
+                                {resumeData.experience.map((exp, index) => (
+                                    <div key={index} className="glass-card p-6 border-l-4 border-teal-600 print:shadow-none print:border-l-2 print:border-slate-300 print:p-0 print:pl-4 print:bg-transparent hover:scale-[1.01] hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all duration-300">
+                                        <div className="flex flex-wrap justify-between items-start mb-2">
+                                            <div>
+                                                <h4 className="text-xl font-bold text-slate-900 dark:text-white print:text-lg print:text-slate-900">{exp.role}</h4>
+                                                <p className="text-teal-600 dark:text-teal-400 font-semibold print:text-slate-700">{exp.company}</p>
+                                            </div>
+                                            <span className="text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full print:bg-transparent print:p-0 print:text-slate-600">{exp.period}</span>
+                                        </div>
+                                        <ul className="space-y-2 text-slate-600 dark:text-slate-300 mt-4 print:mt-2">
+                                            {exp.achievements.map((achievement, i) => (
+                                                <li key={i} className="flex gap-2">
+                                                    <span className="text-teal-600 dark:text-teal-400 font-bold print:hidden">•</span>
+                                                    <span className="print:list-disc print:ml-4">{achievement}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Skills Matrix */}
+                        <div className="mb-12 print:mb-8 print:break-inside-avoid">
+                            <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-8 print:text-xl print:mb-4">Skills & Expertise</h3>
+                            <div className="grid md:grid-cols-3 gap-6 print:grid-cols-3 print:gap-4">
+                                {/* Clinical */}
+                                <div className="group bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/30 dark:to-teal-800/30 rounded-2xl p-6 border border-teal-200 dark:border-teal-800/50 backdrop-blur-sm print:bg-transparent print:border print:border-slate-200 print:p-4 print:rounded-lg hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                    <h4 className="font-display font-bold text-teal-900 dark:text-teal-300 mb-4 text-lg uppercase tracking-wide print:text-sm print:mb-2 print:text-slate-900 group-hover:text-teal-700 dark:group-hover:text-teal-200 transition-colors">Clinical Expertise</h4>
+                                    <ul className="space-y-2">
+                                        {resumeData.skills.clinical.map(skill => (
+                                            <li key={skill} className="flex items-center gap-2 text-teal-800 dark:text-teal-200 print:text-slate-800 print:text-sm">
+                                                <span className="text-xs print:hidden group-hover:scale-110 transition-transform">⭐⭐⭐⭐⭐</span>
+                                                <span className="font-medium">{skill}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Digital Health */}
+                                <div className="group bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl p-6 border border-blue-200 dark:border-blue-800/50 backdrop-blur-sm print:bg-transparent print:border print:border-slate-200 print:p-4 print:rounded-lg hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                    <h4 className="font-display font-bold text-blue-900 dark:text-blue-300 mb-4 text-lg uppercase tracking-wide print:text-sm print:mb-2 print:text-slate-900 group-hover:text-blue-700 dark:group-hover:text-blue-200 transition-colors">Digital Health & AI</h4>
+                                    <ul className="space-y-2">
+                                        {resumeData.skills.digital.map(skill => (
+                                            <li key={skill} className="flex items-center gap-2 text-blue-800 dark:text-blue-200 print:text-slate-800 print:text-sm">
+                                                <span className="text-xs print:hidden group-hover:scale-110 transition-transform">⭐⭐⭐⭐⭐</span>
+                                                <span className="font-medium">{skill}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Technical */}
+                                <div className="group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl p-6 border border-purple-200 dark:border-purple-800/50 backdrop-blur-sm print:bg-transparent print:border print:border-slate-200 print:p-4 print:rounded-lg hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                    <h4 className="font-display font-bold text-purple-900 dark:text-purple-300 mb-4 text-lg uppercase tracking-wide print:text-sm print:mb-2 print:text-slate-900 group-hover:text-purple-700 dark:group-hover:text-purple-200 transition-colors">Technical Stack</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {resumeData.skills.technical.map(skill => (
+                                            <span key={skill} className="bg-purple-200 dark:bg-purple-900/60 text-purple-900 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium print:bg-slate-100 print:text-slate-800 print:border print:border-slate-200 group-hover:bg-purple-300 dark:group-hover:bg-purple-800/80 transition-colors">
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Education & Contact */}
+                        <div className="glass-card p-8 print:shadow-none print:border-none print:p-0">
+                            <div className="grid sm:grid-cols-2 gap-8 mb-8 print:gap-4 print:mb-4">
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 mb-3">Education</h3>
-                                    <ul className="space-y-2 text-slate-600">
-                                        <li>• MD - Universidade do Porto</li>
-                                        <li>• MSc Biomedical Engineering - IST Lisboa</li>
+                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4 text-lg print:text-lg print:mb-2">Education</h3>
+                                    <ul className="space-y-3 text-slate-600 dark:text-slate-300 print:space-y-2">
+                                        {resumeData.education.map((edu, i) => (
+                                            <li key={i} className="flex flex-col">
+                                                <span className="font-semibold text-slate-900 dark:text-white print:text-slate-900">{edu.degree}</span>
+                                                <span className="text-sm print:text-slate-700">{edu.institution}</span>
+                                                <span className="text-xs text-slate-500 dark:text-slate-400 print:text-slate-600">{edu.period}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 mb-3">Technical Skills</h3>
-                                    <ul className="space-y-2 text-slate-600">
-                                        <li>• Python, TensorFlow, PyTorch</li>
-                                        <li>• React, TypeScript, Tailwind</li>
-                                        <li>• Product Strategy & PRD Writing</li>
+                                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4 text-lg print:text-lg print:mb-2">Certifications</h3>
+                                    <ul className="space-y-3 text-slate-600 dark:text-slate-300 print:space-y-2">
+                                        {resumeData.certifications.map((cert, i) => (
+                                            <li key={i} className="flex flex-col">
+                                                <span className="font-semibold text-slate-900 dark:text-white print:text-slate-900">{cert.name}</span>
+                                                <span className="text-sm print:text-slate-700">{cert.issuer}</span>
+                                                <span className="text-xs text-slate-500 dark:text-slate-400 print:text-slate-600">{cert.date}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-200">
+                            <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-200 dark:border-slate-700">
                                 <a
                                     href="https://linkedin.com/in/fmmpinheiro"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
+                                    className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                                 >
                                     <Linkedin className="w-5 h-5" />
                                     <span className="font-medium">LinkedIn</span>
@@ -353,14 +467,14 @@ function Home() {
                                     href="https://github.com/fpinheiropt"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
+                                    className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                                 >
                                     <Github className="w-5 h-5" />
                                     <span className="font-medium">GitHub</span>
                                 </a>
                                 <a
                                     href="mailto:fpinheiro921@gmail.com"
-                                    className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors"
+                                    className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                                 >
                                     <Mail className="w-5 h-5" />
                                     <span className="font-medium">Email</span>
@@ -372,7 +486,7 @@ function Home() {
             </section>
 
             {/* Footer */}
-            <footer className="bg-slate-900 text-white py-12">
+            <footer className="bg-slate-900 text-white py-12 print:hidden">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <p className="text-slate-400 mb-4">
                         © 2025 Francisco Pinheiro. Built with React, TypeScript, and Tailwind CSS.

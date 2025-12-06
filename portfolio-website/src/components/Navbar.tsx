@@ -1,0 +1,105 @@
+import { useState, useEffect } from 'react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function Navbar() {
+    const { theme, toggleTheme } = useTheme();
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { name: 'Projects', href: '#projects' },
+        { name: 'Product Thinking', href: '#thinking' },
+        { name: 'About', href: '#about' },
+    ];
+
+    const scrollToSection = (href: string) => {
+        setIsMobileMenuOpen(false);
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-panel py-3' : 'bg-transparent py-5'
+                }`}
+        >
+            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-display font-bold text-xl text-slate-900 dark:text-white">
+                    FP<span className="text-teal-600 dark:text-teal-400">.</span>
+                </a>
+
+                {/* Desktop Nav */}
+                <div className="hidden md:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <button
+                            key={link.name}
+                            onClick={() => scrollToSection(link.href)}
+                            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                        >
+                            {link.name}
+                        </button>
+                    ))}
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                    </button>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center gap-4">
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
+                    >
+                        {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                    </button>
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="p-2 text-slate-600 dark:text-slate-300"
+                    >
+                        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden glass-panel border-t border-slate-200 dark:border-slate-800"
+                    >
+                        <div className="flex flex-col p-6 gap-4">
+                            {navLinks.map((link) => (
+                                <button
+                                    key={link.name}
+                                    onClick={() => scrollToSection(link.href)}
+                                    className="text-left text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400"
+                                >
+                                    {link.name}
+                                </button>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </nav>
+    );
+}

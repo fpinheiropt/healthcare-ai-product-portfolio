@@ -123,93 +123,87 @@ export const MealPredictor: React.FC<MealPredictorProps> = ({ currentGlucose }) 
                 </div>
             </div>
 
-            <div className="flex flex-col lg:grid lg:grid-cols-3 lg:gap-8">
-                {/* Chart Section - Hero on Mobile */}
-                <div className="lg:col-span-2 order-1 bg-slate-50/50 border-b lg:border-b-0 lg:border-r border-slate-100 p-4 lg:p-6 relative min-h-[300px] lg:min-h-[400px] flex flex-col">
-                    <div className="flex-1 w-full min-h-[250px]">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart data={data} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
-                                <defs>
-                                    <linearGradient id="colorGlucose" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#0d9488" stopOpacity={0.1} />
-                                        <stop offset="95%" stopColor="#0d9488" stopOpacity={0} />
-                                    </linearGradient>
-                                </defs>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                                <XAxis
-                                    dataKey="time"
-                                    tickFormatter={(val) => `${val}m`}
-                                    stroke="#94a3b8"
-                                    fontSize={12}
-                                    tickLine={false}
-                                    axisLine={false}
-                                    dy={10}
-                                />
-                                <YAxis
-                                    domain={[40, 300]}
-                                    stroke="#94a3b8"
-                                    fontSize={12}
-                                    tickLine={false}
-                                    axisLine={false}
-                                />
-                                <Tooltip
-                                    contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                                />
-                                <ReferenceLine y={180} stroke="#fbbf24" strokeDasharray="3 3" label={{ value: 'High Limit', fill: '#d97706', fontSize: 10, position: 'insideRight' }} />
-                                <ReferenceLine y={70} stroke="#f87171" strokeDasharray="3 3" label={{ value: 'Low Limit', fill: '#dc2626', fontSize: 10, position: 'insideRight' }} />
-                                <Area
-                                    type="monotone"
-                                    dataKey="glucose"
-                                    stroke="#0d9488"
-                                    strokeWidth={3}
-                                    fill="url(#colorGlucose)"
-                                    animationDuration={500}
-                                />
-                            </AreaChart>
-                        </ResponsiveContainer>
-                    </div>
+            <div className="flex flex-col">
+                {/* Chart Section - Always Top, Full Width */}
+                <div className="bg-slate-50/50 border-b border-slate-100 p-4 relative h-[300px]">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <AreaChart data={data} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
+                            <defs>
+                                <linearGradient id="colorGlucose" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#0d9488" stopOpacity={0.1} />
+                                    <stop offset="95%" stopColor="#0d9488" stopOpacity={0} />
+                                </linearGradient>
+                            </defs>
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                            <XAxis
+                                dataKey="time"
+                                tickFormatter={(val) => `${val}m`}
+                                stroke="#94a3b8"
+                                fontSize={11}
+                                tickLine={false}
+                                axisLine={false}
+                                dy={5}
+                            />
+                            <YAxis
+                                domain={[40, 300]}
+                                stroke="#94a3b8"
+                                fontSize={11}
+                                tickLine={false}
+                                axisLine={false}
+                            />
+                            <Tooltip
+                                contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                            />
+                            <ReferenceLine y={180} stroke="#fbbf24" strokeDasharray="3 3" label={{ value: 'High', fill: '#d97706', fontSize: 10, position: 'insideRight' }} />
+                            <ReferenceLine y={70} stroke="#f87171" strokeDasharray="3 3" label={{ value: 'Low', fill: '#dc2626', fontSize: 10, position: 'insideRight' }} />
+                            <Area
+                                type="monotone"
+                                dataKey="glucose"
+                                stroke="#0d9488"
+                                strokeWidth={3}
+                                fill="url(#colorGlucose)"
+                                animationDuration={500}
+                            />
+                        </AreaChart>
+                    </ResponsiveContainer>
 
-                    {/* AI Insight Overlay - Floating on Desktop, Static Block on Mobile */}
-                    <div className="mt-4 lg:absolute lg:top-6 lg:left-6 bg-white/90 backdrop-blur-sm p-3 rounded-xl border border-slate-100 shadow-sm max-w-full lg:max-w-xs z-10">
-                        <div className="flex items-start gap-3">
-                            <div className="mt-0.5 p-1.5 bg-slate-50 rounded-lg">
-                                {isHigh ? <AlertCircle size={18} className="text-amber-500" /> :
-                                    isLow ? <AlertCircle size={18} className="text-red-500" /> :
-                                        <TrendingUp size={18} className="text-emerald-500" />}
-                            </div>
-                            <div>
-                                <p className="text-xs font-bold text-slate-700 mb-0.5">AI Analysis</p>
-                                <p className="text-xs text-slate-600 leading-relaxed">
-                                    {isHigh ? `Spike predicted. Try increasing insulin to ${Math.round(insulin + (peakGlucose - 150) / 40)}u.` :
-                                        isLow ? `Hypo risk! Reduce insulin or add complex carbs.` :
-                                            `Excellent control. Matches your profile.`}
-                                </p>
-                            </div>
+                    {/* AI Insight - Compact Strip Overlay */}
+                    <div className="absolute top-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-2.5 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
+                        <div className={`p-1.5 rounded-lg shrink-0 ${isHigh ? 'bg-amber-100 text-amber-600' : isLow ? 'bg-red-100 text-red-600' : 'bg-emerald-100 text-emerald-600'}`}>
+                            {isHigh ? <AlertCircle size={16} /> : isLow ? <AlertCircle size={16} /> : <TrendingUp size={16} />}
                         </div>
+                        <p className="text-xs text-slate-700 leading-tight font-medium">
+                            {isHigh ? `Spike predicted. Try ${Math.round(insulin + (peakGlucose - 150) / 40)}u insulin.` :
+                                isLow ? `Hypo risk! Reduce insulin.` :
+                                    `Good control.`}
+                        </p>
                     </div>
                 </div>
 
-                {/* Controls Section */}
-                <div className="p-6 space-y-8 order-2 bg-white">
-                    {/* Summary Stats Row */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-slate-50 rounded-2xl p-3 border border-slate-100 text-center">
-                            <p className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1">Peak</p>
-                            <p className={`text-xl font-bold ${isHigh ? 'text-amber-600' : 'text-slate-700'}`}>{peakGlucose}</p>
-                            <p className="text-[10px] text-slate-400">mg/dL</p>
+                {/* Info & Controls Section */}
+                <div className="p-5 space-y-6 bg-white">
+                    {/* Stats Row */}
+                    <div className="flex gap-4">
+                        <div className="flex-1 bg-slate-50 rounded-xl p-3 border border-slate-100 flex flex-col items-center">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Peak</span>
+                            <span className={`text-xl font-bold ${isHigh ? 'text-amber-600' : 'text-slate-700'}`}>{peakGlucose}</span>
                         </div>
-                        <div className="bg-slate-50 rounded-2xl p-3 border border-slate-100 text-center">
-                            <p className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1">Min</p>
-                            <p className={`text-xl font-bold ${isLow ? 'text-red-600' : 'text-slate-700'}`}>{minGlucose}</p>
-                            <p className="text-[10px] text-slate-400">mg/dL</p>
+                        <div className="flex-1 bg-slate-50 rounded-xl p-3 border border-slate-100 flex flex-col items-center">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Min</span>
+                            <span className={`text-xl font-bold ${isLow ? 'text-red-600' : 'text-slate-700'}`}>{minGlucose}</span>
+                        </div>
+                        <div className="flex-1 bg-slate-50 rounded-xl p-3 border border-slate-100 flex flex-col items-center">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Resist.</span>
+                            <span className="text-xl font-bold text-slate-700">{(resistanceScore * 100).toFixed(0)}%</span>
                         </div>
                     </div>
 
+                    {/* Sliders */}
                     <div className="space-y-6">
                         <div>
-                            <div className="flex justify-between mb-3">
-                                <label className="text-sm font-bold text-slate-700">Carbs</label>
-                                <span className="text-sm font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-md">{carbs}g</span>
+                            <div className="flex justify-between items-center mb-3">
+                                <label className="text-sm font-bold text-slate-700">Meal Carbs</label>
+                                <span className="text-xs font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-lg">{carbs}g</span>
                             </div>
                             <input
                                 type="range"
@@ -237,11 +231,11 @@ export const MealPredictor: React.FC<MealPredictorProps> = ({ currentGlucose }) 
                         </div>
 
                         <div>
-                            <div className="flex justify-between mb-3">
+                            <div className="flex justify-between items-center mb-3">
                                 <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
-                                    <Syringe size={16} className="text-slate-400" /> Insulin
+                                    <Syringe size={16} className="text-slate-400" /> Insulin Dose
                                 </label>
-                                <span className="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">{insulin}u</span>
+                                <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-lg">{insulin}u</span>
                             </div>
                             <input
                                 type="range"
