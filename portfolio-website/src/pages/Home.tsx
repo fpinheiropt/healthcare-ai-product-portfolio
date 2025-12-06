@@ -126,7 +126,7 @@ function Home() {
                                     className="group relative glass-card overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-teal-900/10 dark:hover:shadow-teal-900/20 transition-all duration-300"
                                 >
                                     {/* Gradient Header */}
-                                    <div className={`h-32 bg-gradient-to-br ${project.color} relative overflow-hidden group-hover:scale-110 transition-transform duration-500`}>
+                                    <div className={`h-32 bg-gradient-to-br ${project.color} relative overflow-hidden transition-transform duration-500`}>
                                         <div className="absolute inset-0 bg-black/10"></div>
                                         <div className="absolute top-4 right-4 glass-panel p-3 rounded-xl shadow-lg">
                                             <Icon className="w-8 h-8 text-white" />
