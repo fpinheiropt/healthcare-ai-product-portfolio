@@ -1,10 +1,15 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Wind, Droplet, Github, Linkedin, Mail, ExternalLink, ArrowRight, FileText, Search } from 'lucide-react';
+import { Heart, Wind, Droplet, Github, Linkedin, Mail, ExternalLink, ArrowRight, FileText, Search, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { resumeData } from '../data/resume';
+import ArchitectureModal from '../components/ArchitectureModal';
+import { architectureData } from '../data/architecture';
 
 function Home() {
+    const [selectedArchitectureId, setSelectedArchitectureId] = React.useState<string | null>(null);
+
     const projects = [
         {
             id: 'heartguide',
@@ -157,22 +162,42 @@ function Home() {
                                             ))}
                                         </div>
 
-                                        {/* Launch Button */}
-                                        <a
-                                            href={project.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 group-hover:gap-3 transition-all active:scale-95 origin-left"
-                                        >
-                                            Launch App
-                                            <ExternalLink className="w-4 h-4" />
-                                        </a>
+                                        <div className="flex gap-4">
+                                            {/* Launch Button */}
+                                            <a
+                                                href={project.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 group-hover:gap-3 transition-all active:scale-95 origin-left"
+                                            >
+                                                Launch App
+                                                <ExternalLink className="w-4 h-4" />
+                                            </a>
+
+                                            {/* Architecture Button */}
+                                            <button
+                                                onClick={() => setSelectedArchitectureId(project.id)}
+                                                className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-semibold hover:text-slate-700 dark:hover:text-slate-200 transition-colors active:scale-95"
+                                            >
+                                                <Code className="w-4 h-4" />
+                                                System Design
+                                            </button>
+                                        </div>
                                     </div>
                                 </motion.div>
                             );
                         })}
                     </div>
                 </div>
+
+                {/* Architecture Modal */}
+                {selectedArchitectureId && (
+                    <ArchitectureModal
+                        isOpen={!!selectedArchitectureId}
+                        onClose={() => setSelectedArchitectureId(null)}
+                        data={architectureData[selectedArchitectureId]}
+                    />
+                )}
             </section>
 
             {/* Product Thinking Section */}
