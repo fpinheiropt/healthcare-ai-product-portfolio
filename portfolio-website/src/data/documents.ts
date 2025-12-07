@@ -4,7 +4,7 @@ import glucoWisePrd from '../assets/docs/GlucoWise-AI-PRD.md?raw';
 import swordTeardown from '../assets/docs/Sword-Health-Teardown.md?raw';
 import omadaTeardown from '../assets/docs/Omada-Health-Teardown.md?raw';
 import helloHeartTeardown from '../assets/docs/Hello-Heart-Teardown.md?raw';
-import swordBlog from '../assets/docs/Sword-Health-Deep-Dive.md?raw';
+
 
 export interface Document {
     id: string;
@@ -57,11 +57,5 @@ export const documents: Record<string, Document> = {
         content: helloHeartTeardown,
         originalUrl: 'https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/project-1-teardowns/Hello-Heart-Teardown.md'
     },
-    'sword-blog': {
-        id: 'sword-blog',
-        title: 'Sword Health Deep Dive',
-        type: 'Blog',
-        content: swordBlog,
-        originalUrl: 'https://github.com/fpinheiropt/healthcare-ai-product-portfolio/blob/master/blog-posts/2025-11-15-sword-health-deep-dive.md'
-    }
+
 };

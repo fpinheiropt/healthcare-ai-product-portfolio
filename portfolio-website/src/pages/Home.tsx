@@ -331,28 +331,7 @@ function Home() {
                             </div>
                         </Link>
 
-                        {/* Blog Post */}
-                        <Link
-                            to="/documents/sword-blog"
-                            className="glass-card p-8 group md:col-span-2 lg:col-span-3 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50"
-                        >
-                            <div className="flex flex-col md:flex-row items-center gap-6">
-                                <div className="bg-orange-50 dark:bg-orange-900/30 w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center group-hover:bg-orange-100 dark:group-hover:bg-orange-900/50 transition-colors">
-                                    <FileText className="w-7 h-7 text-orange-600 dark:text-orange-400" />
-                                </div>
-                                <div className="text-center md:text-left">
-                                    <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                                        Recent Insight: Sword Health Deep Dive
-                                    </h3>
-                                    <p className="text-slate-600 dark:text-slate-400 mb-0">
-                                        Exploring the "Behavioral Gap" in digital MSK care and how Predictive AI can solve it.
-                                    </p>
-                                </div>
-                                <div className="md:ml-auto flex items-center gap-2 text-orange-600 dark:text-orange-400 font-semibold text-sm whitespace-nowrap">
-                                    Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </div>
-                            </div>
-                        </Link>
+
 
                     </div>
                 </div>
