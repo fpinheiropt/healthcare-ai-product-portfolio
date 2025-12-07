@@ -47,7 +47,7 @@ I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineer
 #### 💓 [HeartGuide AI](https://heartguide-ai.vercel.app/)
 AI-powered clinical decision support system reducing 30-day heart failure readmissions.
 - **Features**: 
-  - ⭐ **Interactive Risk Simulator**: Real-time Monte Carlo simulation of patient risk.
+  - ➡️ **Interactive Risk Simulator**: Real-time Monte Carlo simulation of patient risk.
   - 🏗️ **System Architecture View**: Interactive modal showing the "Frontend -> API -> ML" pipeline.
   - **Tech Stack**: React, Python (FastAPI), TensorFlow Lite, PostgreSQL.
 - **Status**: ✅ Deployed
@@ -55,7 +55,7 @@ AI-powered clinical decision support system reducing 30-day heart failure readmi
 #### 🫁 [BreathEasy AI](https://breatheasy-ai.vercel.app/)
 Intelligent asthma management platform with environmental trigger prediction.
 - **Features**:
-  - ⭐ **Environmental Simulator**: Real-time AQI & Weather trigger impact analysis.
+  - ➡️ **Environmental Simulator**: Real-time AQI & Weather trigger impact analysis.
   - 🏗️ **System Architecture View**: Detailed visualizations of the data ingestion pipeline.
   - **Tech Stack**: Next.js, Redis (Geo-spatial caching), Scikit-learn, OpenWeather API.
 - **Status**: ✅ Deployed
@@ -63,7 +63,7 @@ Intelligent asthma management platform with environmental trigger prediction.
 #### 🩸 [GlucoWise AI](https://glucowise-ai.vercel.app/)
 Metabolic health platform for Type 2 diabetes management.
 - **Features**:
-  - ⭐ **Meal Predictor**: Computer Vision + ML to predict glucose spikes from food inputs.
+  - ➡️ **Meal Predictor**: Computer Vision + ML to predict glucose spikes from food inputs.
   - 🏗️ **System Architecture View**: Full-stack schema including XGBoost model integration.
   - **Tech Stack**: React, Node.js, XGBoost, MongoDB.
 - **Status**: ✅ Deployed
