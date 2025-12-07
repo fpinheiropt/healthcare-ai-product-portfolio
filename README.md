@@ -14,7 +14,6 @@
 - 📄 **Writing professional PRDs** with clinical user research (cardiologists, endocrinologists, pulmonologists)
 - 🤖 **Building 3 AI healthcare product MVPs**: HeartGuide AI, GlucoWise AI, and BreathEasy AI (All Deployed)
 - 💼 **Interactive "CVe"**: A printable, portfolio-integrated resume system
-- 📝 **Publishing weekly blog posts** documenting my MD + AI PM journey
 - 🎓 **Completing EDIT Data Science & Advanced AI bootcamps** (Future Plan)
 
 ## 🔍 My Unique Advantage
@@ -74,16 +73,13 @@ Metabolic health platform for Type 2 diabetes management.
 - **[BreathEasy AI (Asthma)](project-2-prd/BreathEasy-AI-PRD.md)**: Smart asthma management with environmental trigger prediction.
 - **[GlucoWise AI (Diabetes)](project-2-prd/GlucoWise-AI-PRD.md)**: Intelligent coaching platform for Type 2 diabetes lifestyle management.
 
-## 📝 Blog Posts & Insights
 
-- **[Building 3 AI Healthcare MVPs in 3 Weeks](blog-posts/2025-11-29-building-3-ai-mvps.md)**: A product manager's journey from concept to deployment
-- **[Sword Health Deep Dive](blog-posts/2025-11-15-sword-health-deep-dive.md)**: Analysis of the digital MSK care market leader
 
 ## 🔍 Product Teardowns
 
-- **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Deep dive into the future of digital MSK care
-- **[Omada Health](project-1-teardowns/Omada-Health-Teardown.md)**: The pioneer of "Virtual First" chronic care
-- **[Hello Heart](project-1-teardowns/Hello-Heart-Teardown.md)**: Frictionless cardiovascular health monitoring
+- **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Strategic analysis of the "Behavioral Gap" in digital MSK care & "Smart Nudge" feature proposal.
+- **[Omada Health](project-1-teardowns/Omada-Health-Teardown.md)**: "Ozempic Era" survival strategy & "Smart Cart" logistics integration proposal.
+- **[Hello Heart](project-1-teardowns/Hello-Heart-Teardown.md)**: Frictionless cardiovascular health monitoring.
 
 
 ## 📚 Education & Certifications
@@ -97,7 +93,6 @@ Metabolic health platform for Type 2 diabetes management.
 
 I document my journey from MD to AI Product Manager through regular writing:
 - Weekly posts on [LinkedIn](https://linkedin.com/in/fmmpinheiro)
-- Technical deep dives on [Medium](https://medium.com/@yourusername) (Coming Soon)
 
 ## 🤝 Let's Connect
 
