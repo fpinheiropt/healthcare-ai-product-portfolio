@@ -44,7 +44,7 @@ I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineer
 
 ### 1. AI Healthcare Product MVPs (LIVE)
 
-#### 💓 [HeartGuide AI](https://heartguide-ai.vercel.app/)
+#### 🫀 [HeartGuide AI](https://heartguide-ai.vercel.app/)
 AI-powered clinical decision support system reducing 30-day heart failure readmissions.
 - **Features**: 
   - ➡️ **Interactive Risk Simulator**: Real-time Monte Carlo simulation of patient risk.
