@@ -63,7 +63,7 @@ function Home() {
                     >
                         <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-8">
                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm font-medium text-slate-700 dark:text-slate-200">Available for Product Roles</span>
+                            <span className="text-sm font-medium text-slate-700 dark:text-slate-200">Available for Clinical Specialist Roles</span>
                         </div>
 
                         <h1 className="font-display text-5xl sm:text-7xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
