@@ -107,7 +107,3 @@ I document my journey from MD to AI Product Manager through regular writing:
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-*"The future of healthcare is at the intersection of clinical expertise and artificial intelligence. I'm building the bridge."*
