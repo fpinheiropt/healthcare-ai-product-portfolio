@@ -370,13 +370,13 @@ function Home() {
                             </div>
                         </div>
 
-                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-16 text-center print:text-left print:mb-8 print:text-base print:max-w-none">
+                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-16 text-center print:text-left print:mb-8 print:text-base print:max-w-none print:text-slate-900">
                             Bridging clinical medicine, AI/ML engineering, and product thinking to build solutions that truly address healthcare challenges.
                         </p>
 
                         {/* Bio Card */}
                         <div className="glass-card p-8 mb-12 print:shadow-none print:border-none print:p-0 print:mb-8">
-                            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed print:text-base print:text-slate-800">
+                            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed print:text-base print:text-slate-900">
                                 {resumeData.bio}
                             </p>
                         </div>
@@ -386,7 +386,7 @@ function Home() {
                             <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-8 print:text-xl print:mb-4">Work Experience</h3>
                             <div className="space-y-6 print:space-y-4">
                                 {resumeData.experience.map((exp, index) => (
-                                    <div key={index} className="glass-card p-6 border-l-4 border-teal-600 print:shadow-none print:border-l-2 print:border-slate-300 print:p-0 print:pl-4 print:bg-transparent hover:scale-[1.01] hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all duration-300">
+                                    <div key={index} className="glass-card p-6 border-l-4 border-teal-600 print:break-inside-avoid print:shadow-none print:border-l-2 print:border-slate-800 print:p-0 print:pl-4 print:bg-transparent hover:scale-[1.01] hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all duration-300">
                                         <div className="flex flex-wrap justify-between items-start mb-2">
                                             <div>
                                                 <h4 className="text-xl font-bold text-slate-900 dark:text-white print:text-lg print:text-slate-900">{exp.role}</h4>
@@ -452,7 +452,7 @@ function Home() {
                         </div>
 
                         {/* Education & Contact */}
-                        <div className="glass-card p-8 print:shadow-none print:border-none print:p-0">
+                        <div className="glass-card p-8 print:shadow-none print:border-none print:p-0 print:break-inside-avoid">
                             <div className="grid sm:grid-cols-2 gap-8 mb-8 print:gap-4 print:mb-4">
                                 <div>
                                     <h3 className="font-semibold text-slate-900 dark:text-white mb-4 text-lg print:text-lg print:mb-2">Education</h3>

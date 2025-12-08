@@ -36,7 +36,7 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({ isOpen, onClose, 
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl -z-10" />
 
                             {/* Header */}
-                            <div className="p-8 border-b border-slate-100 dark:border-slate-800 flex justify-between items-start">
+                            <div className="p-6 md:p-8 border-b border-slate-100 dark:border-slate-800 flex justify-between items-start">
                                 <div>
                                     <div className="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                                         <Code className="w-3 h-3" />
@@ -55,7 +55,7 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({ isOpen, onClose, 
                             </div>
 
                             {/* Body */}
-                            <div className="p-8 grid md:grid-cols-3 gap-8">
+                            <div className="p-6 md:p-8 grid md:grid-cols-3 gap-8">
                                 {/* Left Column: Tech Stack */}
                                 <div className="space-y-6">
                                     <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -67,9 +67,9 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({ isOpen, onClose, 
                                             <span
                                                 key={tech.name}
                                                 className={`px-3 py-1.5 rounded-lg text-sm font-medium border ${tech.category === 'frontend' ? 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-800' :
-                                                        tech.category === 'backend' ? 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-800' :
-                                                            tech.category === 'ai' ? 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-800' :
-                                                                'bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700'
+                                                    tech.category === 'backend' ? 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-800' :
+                                                        tech.category === 'ai' ? 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-800' :
+                                                            'bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700'
                                                     }`}
                                             >
                                                 {tech.name}

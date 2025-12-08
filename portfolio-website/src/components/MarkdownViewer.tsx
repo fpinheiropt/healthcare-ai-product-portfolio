@@ -23,8 +23,8 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ content, title, backLin
                     Back to Portfolio
                 </Link>
 
-                <article className="glass-card p-8 sm:p-12">
-                    <div className="prose prose-slate dark:prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-teal-600 dark:prose-a:text-teal-400 hover:prose-a:text-teal-700 dark:hover:prose-a:text-teal-300 prose-img:rounded-xl">
+                <article className="glass-card p-6 sm:p-12">
+                    <div className="prose prose-slate dark:prose-invert md:prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-teal-600 dark:prose-a:text-teal-400 hover:prose-a:text-teal-700 dark:hover:prose-a:text-teal-300 prose-img:rounded-xl">
                         <ReactMarkdown
                             rehypePlugins={[rehypeRaw]}
                             remarkPlugins={[remarkGfm]}
