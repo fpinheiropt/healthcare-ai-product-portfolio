@@ -417,7 +417,11 @@ function Home() {
                                     <ul className="space-y-2">
                                         {resumeData.skills.clinical.map(skill => (
                                             <li key={skill} className="flex items-center gap-2 text-teal-800 dark:text-teal-200 print:text-slate-800 print:text-sm">
-                                                <span className="text-xs print:hidden group-hover:scale-110 transition-transform">⭐⭐⭐⭐⭐</span>
+                                                <div className="flex gap-1 print:hidden group-hover:scale-110 transition-transform">
+                                                    {[1, 2, 3, 4, 5].map(i => (
+                                                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-current opacity-80" />
+                                                    ))}
+                                                </div>
                                                 <span className="font-medium">{skill}</span>
                                             </li>
                                         ))}
@@ -430,7 +434,11 @@ function Home() {
                                     <ul className="space-y-2">
                                         {resumeData.skills.digital.map(skill => (
                                             <li key={skill} className="flex items-center gap-2 text-blue-800 dark:text-blue-200 print:text-slate-800 print:text-sm">
-                                                <span className="text-xs print:hidden group-hover:scale-110 transition-transform">⭐⭐⭐⭐⭐</span>
+                                                <div className="flex gap-1 print:hidden group-hover:scale-110 transition-transform">
+                                                    {[1, 2, 3, 4, 5].map(i => (
+                                                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-current opacity-80" />
+                                                    ))}
+                                                </div>
                                                 <span className="font-medium">{skill}</span>
                                             </li>
                                         ))}
@@ -438,11 +446,11 @@ function Home() {
                                 </div>
 
                                 {/* Technical */}
-                                <div className="group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl p-6 border border-purple-200 dark:border-purple-800/50 backdrop-blur-sm print:bg-transparent print:border print:border-slate-200 print:p-4 print:rounded-lg hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                                    <h4 className="font-display font-bold text-purple-900 dark:text-purple-300 mb-4 text-lg uppercase tracking-wide print:text-sm print:mb-2 print:text-slate-900 group-hover:text-purple-700 dark:group-hover:text-purple-200 transition-colors">Technical Stack</h4>
+                                <div className="group bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 backdrop-blur-sm print:bg-transparent print:border print:border-slate-200 print:p-4 print:rounded-lg hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                    <h4 className="font-display font-bold text-slate-800 dark:text-slate-200 mb-4 text-lg uppercase tracking-wide print:text-sm print:mb-2 print:text-slate-900 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Technical Stack</h4>
                                     <div className="flex flex-wrap gap-2">
                                         {resumeData.skills.technical.map(skill => (
-                                            <span key={skill} className="bg-purple-200 dark:bg-purple-900/60 text-purple-900 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium print:bg-slate-100 print:text-slate-800 print:border print:border-slate-200 group-hover:bg-purple-300 dark:group-hover:bg-purple-800/80 transition-colors">
+                                            <span key={skill} className="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-3 py-1 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-600 print:bg-slate-100 print:text-slate-800 print:border print:border-slate-200 group-hover:border-slate-300 dark:group-hover:border-slate-500 transition-colors">
                                                 {skill}
                                             </span>
                                         ))}
