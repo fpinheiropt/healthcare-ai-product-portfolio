@@ -1,6 +1,6 @@
 # Hi, I'm Francisco 👋
 
-**MD Building AI Healthcare Products | Aspiring AI Product Manager**
+**MD Building AI Healthcare Products | AI Product Specialist**
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
@@ -91,7 +91,7 @@ Metabolic health platform for Type 2 diabetes management.
 
 ## 📝 Blog & Writing
 
-I document my journey from MD to AI Product Manager through regular writing:
+I document my work at the intersection of Clinical Medicine and AI through regular writing:
 - Weekly posts on [LinkedIn](https://linkedin.com/in/fmmpinheiro)
 
 ## 🤝 Let's Connect

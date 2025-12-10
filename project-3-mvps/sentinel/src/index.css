@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-white overflow-hidden;
+  }
+}
+
+/* Note: 'slate' might be renamed or requried specific import. using gray-950 for safety or will check if slate works */

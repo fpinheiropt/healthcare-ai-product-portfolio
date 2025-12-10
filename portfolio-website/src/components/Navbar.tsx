@@ -51,23 +51,12 @@ export default function Navbar() {
                             {link.name}
                         </button>
                     ))}
-                    <button
-                        onClick={toggleTheme}
-                        className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
-                        aria-label="Toggle theme"
-                    >
-                        {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                    </button>
+
                 </div>
 
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center gap-4">
-                    <button
-                        onClick={toggleTheme}
-                        className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
-                    >
-                        {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                    </button>
+
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="p-2 text-slate-600 dark:text-slate-300"

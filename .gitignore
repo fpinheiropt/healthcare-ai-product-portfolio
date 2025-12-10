@@ -1,4 +1,7 @@
-# Byte-compiled / optimized / DLL files
+# Global
+node_modules/
+.DS_Store
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -152,6 +155,7 @@ cython_debug/
 *.xlsx
 *.json
 !package.json
+!vercel.json
 *.h5
 *.pkl
 *.pth

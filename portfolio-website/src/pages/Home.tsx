@@ -1,6 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Wind, Droplet, Github, Linkedin, Mail, ExternalLink, ArrowRight, FileText, Search, Code } from 'lucide-react';
+import {
+    Heart,
+    Wind,
+    Droplet,
+    Github,
+    Linkedin,
+    Mail,
+    ExternalLink,
+    ArrowRight,
+    FileText,
+    Search,
+    Code as CodeIcon,
+    ShieldCheck,
+    ShieldAlert,
+    GitBranch,
+    Database,
+    Eye
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { resumeData } from '../data/resume';
@@ -40,6 +57,56 @@ function Home() {
             color: 'from-blue-500 to-indigo-600',
             url: 'https://glucowise-ai.vercel.app/',
             features: ['Meal Simulator', 'Glucose Prediction', 'Metabolic Scoring']
+        },
+        {
+            id: 'triage-os',
+            name: 'HealthLine AI',
+            tagline: 'National AI Symptom Triage',
+            description: 'A "No-Black-Box" clinical front-door simulator. Uses deterministic ESI protocols to safely route patients, designed for national-scale resilience.',
+            icon: ShieldCheck,
+            color: 'from-blue-600 to-cyan-500',
+            url: 'https://triage-cu5f7vyw9-franciscos-projects-73f8717a.vercel.app/',
+            features: ['ESI Scoring Engine', 'Red-Flag Safety', 'Protocol Logic']
+        },
+        {
+            id: 'surge-commander',
+            name: 'Surge Commander',
+            tagline: 'Epidemic Capacity Dashboard',
+            description: 'Command center simulating hospital capacity during patient surges. Uses System Dynamics to model inflow, bed occupancy, and system collapse risks.',
+            icon: ShieldAlert,
+            color: 'from-amber-500 to-orange-600',
+            url: 'https://surge-commander-8ne3vdhp2-franciscos-projects-73f8717a.vercel.app/',
+            features: ['Capacity Simulation', 'Inflow Modeling', 'Collapse Prediction']
+        },
+        {
+            id: 'careflow-architect',
+            name: 'CareFlow Architect',
+            tagline: 'Visual Protocol Builder',
+            description: 'No-Code editor for clinicians to design triage algorithms. Demonstrates "Platform Product" thinking by providing tools for clinical teams to build their own AI logic.',
+            icon: GitBranch,
+            color: 'from-violet-500 to-fuchsia-600',
+            url: 'https://careflow-architect-7uj5t9doq-franciscos-projects-73f8717a.vercel.app/',
+            features: ['React Flow Engine', 'Visual Programming', 'JSON Protocol Export']
+        },
+        {
+            id: 'docu-flow',
+            name: 'DocuFlow',
+            tagline: 'Clinical Discovery Engine',
+            description: 'Smart template engine that generates perfect admission notes in <45s. Replaces free-text typing with structured clinical choices to reduce burnout.',
+            icon: FileText,
+            color: 'from-slate-500 to-slate-700',
+            url: 'https://docu-flow-franciscos-projects-73f8717a.vercel.app/',
+            features: ['Template Engine', 'Copy-to-EHR', 'Instant Preview']
+        },
+        {
+            id: 'sentinel',
+            name: 'Sentinel AI',
+            tagline: 'Computer Vision Safety Guard',
+            description: 'Always-on "Digital Eye" for waiting rooms. Detects patient distress (slumping, agitation) via pose estimation to prevent silent collapse.',
+            icon: Eye,
+            color: 'from-emerald-500 to-teal-700',
+            url: 'https://sentinel-es85ln6nf-franciscos-projects-73f8717a.vercel.app/',
+            features: ['Pose Detection', 'Distress Score', 'Nurse Command Center']
         }
     ];
 
@@ -61,10 +128,7 @@ function Home() {
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-8">
-                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm font-medium text-slate-700 dark:text-slate-200">Available for Clinical Specialist Roles</span>
-                        </div>
+
 
                         <h1 className="font-display text-5xl sm:text-7xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
                             Francisco Pinheiro
@@ -98,10 +162,10 @@ function Home() {
                         </div>
                     </motion.div>
                 </div>
-            </section>
+            </section >
 
             {/* Projects Section */}
-            <section id="projects" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300 print:hidden">
+            < section id="projects" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300 print:hidden" >
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -179,7 +243,7 @@ function Home() {
                                                 onClick={() => setSelectedArchitectureId(project.id)}
                                                 className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-semibold hover:text-slate-700 dark:hover:text-slate-200 transition-colors active:scale-95"
                                             >
-                                                <Code className="w-4 h-4" />
+                                                <CodeIcon className="w-4 h-4" />
                                                 System Design
                                             </button>
                                         </div>
@@ -191,17 +255,19 @@ function Home() {
                 </div>
 
                 {/* Architecture Modal */}
-                {selectedArchitectureId && (
-                    <ArchitectureModal
-                        isOpen={!!selectedArchitectureId}
-                        onClose={() => setSelectedArchitectureId(null)}
-                        data={architectureData[selectedArchitectureId]}
-                    />
-                )}
-            </section>
+                {
+                    selectedArchitectureId && (
+                        <ArchitectureModal
+                            isOpen={!!selectedArchitectureId}
+                            onClose={() => setSelectedArchitectureId(null)}
+                            data={architectureData[selectedArchitectureId]}
+                        />
+                    )
+                }
+            </section >
 
             {/* Product Thinking Section */}
-            <section id="thinking" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 print:hidden">
+            < section id="thinking" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 print:hidden" >
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -220,6 +286,33 @@ function Home() {
 
                     {/* Unified Grid: 3 Columns for 6 Items */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        {/* Featured Insight: SNS Transformation */}
+                        <Link
+                            to="/sns-transformation"
+                            className="glass-card p-8 group md:col-span-2 lg:col-span-3 bg-gradient-to-br from-white to-teal-50 dark:from-slate-900 dark:to-teal-900/20 border-teal-200 dark:border-teal-800"
+                        >
+                            <div className="flex flex-col md:flex-row items-center gap-8">
+                                <div className="bg-teal-100 dark:bg-teal-900/50 p-6 rounded-2xl group-hover:scale-105 transition-transform">
+                                    <Database className="w-12 h-12 text-teal-600 dark:text-teal-400" />
+                                </div>
+                                <div className="text-center md:text-left flex-1">
+                                    <div className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-bold text-sm uppercase tracking-wide mb-2">
+                                        <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+                                        Strategic Blueprint 2025
+                                    </div>
+                                    <h3 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors">
+                                        Re-Engineering the Portuguese SNS
+                                    </h3>
+                                    <p className="text-slate-600 dark:text-slate-400 text-lg mb-4 max-w-2xl">
+                                        A tactical roadmap for the Ministry of Health: Moving from a saturated, reactive model to a sustainable "Bionic Health System" through Algorithmic Optimization.
+                                    </p>
+                                    <div className="flex items-center justify-center md:justify-start gap-2 text-teal-700 dark:text-teal-400 font-bold">
+                                        Read the Manifesto <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
 
                         {/* PRDs */}
                         <Link
@@ -335,10 +428,10 @@ function Home() {
 
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* About Section */}
-            <section id="about" className="py-24 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 transition-colors duration-300 print:bg-white print:py-0">
+            < section id="about" className="py-24 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 transition-colors duration-300 print:bg-white print:py-0" >
                 <div className="max-w-6xl mx-auto px-6 print:px-0 print:max-w-none">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -518,10 +611,10 @@ function Home() {
                         </div>
                     </motion.div>
                 </div>
-            </section>
+            </section >
 
             {/* Footer */}
-            <footer className="bg-slate-900 text-white py-12 print:hidden">
+            < footer className="bg-slate-900 text-white py-12 print:hidden" >
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <p className="text-slate-400 mb-4">
                         © 2025 Francisco Pinheiro. Built with React, TypeScript, and Tailwind CSS.
@@ -530,8 +623,8 @@ function Home() {
                         "The future of healthcare is at the intersection of clinical expertise and artificial intelligence."
                     </p>
                 </div>
-            </footer>
-        </div>
+            </footer >
+        </div >
     );
 }
 

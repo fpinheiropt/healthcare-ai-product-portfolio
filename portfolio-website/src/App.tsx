@@ -7,6 +7,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const DocumentPage = React.lazy(() => import('./pages/DocumentPage'));
+const SNSTransformation = React.lazy(() => import('./pages/SNSTransformation'));
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Suspense fallback={<Loading />}>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/sns-transformation" element={<SNSTransformation />} />
                         <Route path="/documents/:id" element={<DocumentPage />} />
                     </Routes>
                 </Suspense>
