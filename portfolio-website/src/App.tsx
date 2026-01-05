@@ -8,6 +8,8 @@ import { ThemeProvider } from './contexts/ThemeContext';
 const Home = React.lazy(() => import('./pages/Home'));
 const DocumentPage = React.lazy(() => import('./pages/DocumentPage'));
 const SNSTransformation = React.lazy(() => import('./pages/SNSTransformation'));
+const SNSSimulator = React.lazy(() => import('./pages/SNSSimulator'));
+const DesignSystem = React.lazy(() => import('./pages/DesignSystem'));
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/sns-transformation" element={<SNSTransformation />} />
+                        <Route path="/sns-simulator" element={<SNSSimulator />} />
+                        <Route path="/design-system" element={<DesignSystem />} />
                         <Route path="/documents/:id" element={<DocumentPage />} />
                     </Routes>
                 </Suspense>

@@ -26,7 +26,7 @@ function SNSTransformation() {
                         <span>Sovereign AI Architecture</span>
                     </div>
                     <h1 className="font-display text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-                        Building the <span className="text-teal-600 dark:text-teal-400">Bionic SNS</span>
+                        Building the <span className="text-teal-600 dark:text-teal-400">Intelligent SNS</span>
                     </h1>
                     <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed border-l-4 border-teal-500 pl-6">
                         Moving beyond procurement: A proposal to build sovereign, custom AI infrastructure to solve the SNS operational crisis.
@@ -63,7 +63,7 @@ function SNSTransformation() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-blue-300 mb-3 flex items-center gap-2">
-                                    <Code className="w-5 h-5" /> Open Core
+                                    <Code className="w-5 h-5" /> Sovereign Intelligence
                                 </h3>
                                 <p className="text-slate-300 text-sm leading-relaxed">
                                     Leveraging open-source LLMs (Llama 3, Mistral) fine-tuned on Portuguese medical corpora to reduce licensing costs and vendor lock-in.
@@ -71,7 +71,7 @@ function SNSTransformation() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-purple-300 mb-3 flex items-center gap-2">
-                                    <ShieldCheck className="w-5 h-5" /> Clinical Safety
+                                    <ShieldCheck className="w-5 h-5" /> Deterministic Safety Layers
                                 </h3>
                                 <p className="text-slate-300 text-sm leading-relaxed">
                                     Implementing "Human-in-the-loop" deterministic validation layers (like my <strong>Triage-Os</strong> engine) to prevent hallucinations in critical pathways.
@@ -108,9 +108,9 @@ function SNSTransformation() {
                             </div>
                             <div className="glass-card p-6 border-l-4 border-teal-500">
                                 <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                    App to Build: <span className="text-teal-600">"CliniScript"</span>
+                                    Agents to Deploy: <span className="text-teal-600">"CliniScript"</span>
                                 </h4>
-                                <div className="text-xs font-bold uppercase text-slate-500 mb-2">Ambient Clinical Intelligence</div>
+                                <div className="text-xs font-bold uppercase text-slate-500 mb-2">Automated Documentation Agent</div>
                                 <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
                                     <li>• <strong>Core Tech</strong>: Local LLM fine-tuned on Portuguese SClínico notes.</li>
                                     <li>• <strong>Function</strong>: Ambiently listens to the consult and auto-generates SOAP notes, prescriptions, and exam requisitions.</li>
@@ -164,9 +164,9 @@ function SNSTransformation() {
                             </div>
                             <div className="glass-card p-6 border-l-4 border-teal-500">
                                 <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                    App to Build: <span className="text-teal-600">"RxOptimize"</span>
+                                    Agent to Deploy: <span className="text-teal-600">"RxOptimize"</span>
                                 </h4>
-                                <div className="text-xs font-bold uppercase text-slate-500 mb-2">AI De-Prescribing Agent</div>
+                                <div className="text-xs font-bold uppercase text-slate-500 mb-2">Pharmacist Safety Agent</div>
                                 <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
                                     <li>• <strong>Core Tech</strong>: Knowledge Graph of Drug-Drug Interactions (DDIs).</li>
                                     <li>• <strong>Function</strong>: Scans patient list for high-risk combos. Suggests "De-prescribing" protocols to the GP.</li>
@@ -191,9 +191,9 @@ function SNSTransformation() {
                             </div>
                             <div className="glass-card p-6 border-l-4 border-teal-500">
                                 <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                                    App to Build: <span className="text-teal-600">"GestaLink"</span>
+                                    Agent to Deploy: <span className="text-teal-600">"GestaLink"</span>
                                 </h4>
-                                <div className="text-xs font-bold uppercase text-slate-500 mb-2">Remote Obstetric Telemetry</div>
+                                <div className="text-xs font-bold uppercase text-slate-500 mb-2">Maternal Guardian Agent</div>
                                 <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
                                     <li>• <strong>Core Tech</strong>: Connected BP cuff + Urinalysis strips (OCR).</li>
                                     <li>• <strong>Function</strong>: Mothers scan results at home. AI flags protein/BP spikes instantly.</li>

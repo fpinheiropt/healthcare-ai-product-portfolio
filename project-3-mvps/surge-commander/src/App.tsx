@@ -78,8 +78,8 @@ function App() {
                             <ShieldAlert className="w-8 h-8 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-3xl font-display font-bold text-slate-900">Surge Commander</h1>
-                            <p className="text-slate-500 font-medium">Epidemic Capacity Simulator • Ministry of Health</p>
+                            <h1 className="text-3xl font-display font-bold text-slate-900">National Health OS</h1>
+                            <p className="text-slate-500 font-medium">National Capacity Simulator • Ministry of Health</p>
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@ function App() {
                         <div className="mt-6 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
                             <h4 className="font-bold text-slate-800 mb-2">How it works</h4>
                             <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                                This dashboard uses System Dynamics to model hospital capacity.
+                                This dashboard uses System Dynamics to model national health capacity.
                                 Adjust the <strong className="text-blue-600">Inflow Rate</strong> (Epidemic Surge) and <strong className="text-emerald-600">Discharge Rate</strong> (Efficiency) to see if the system collapses.
                             </p>
                             <div className="flex items-center gap-2 text-xs font-mono text-slate-400 bg-slate-50 p-2 rounded">

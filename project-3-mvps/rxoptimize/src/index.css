@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #3b82f6;
+  /* Blue 500 */
+  --color-brand-secondary: #0f172a;
+  /* Slate 900 */
+  --font-display: 'Inter', sans-serif;
+}
+
+body {
+  @apply bg-slate-100 text-slate-900;
+  font-family: 'Inter', system-ui, sans-serif;
+}

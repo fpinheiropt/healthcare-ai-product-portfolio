@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Wind, CloudRain, Thermometer, AlertTriangle, Info, Droplets, MapPin } from 'lucide-react';
+import { Wind, CloudRain, Thermometer, AlertTriangle, Info, Droplets, MapPin, TrendingUp } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
 // Trained Model Coefficients (from ml-pipeline/train_copd_model.py)
@@ -23,16 +23,29 @@ const MODEL_PARAMS = {
     }
 };
 
+import { WeatherData } from '../types';
+
 interface EnvironmentalTriggerProps {
+    weather?: WeatherData;
     className?: string;
 }
 
-export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ className }) => {
+export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ weather, className }) => {
     // 1. Environmental Inputs
-    const [aqi, setAqi] = useState(45); // Air Quality Index
-    const [pollenLevel, setPollenLevel] = useState<'Low' | 'Medium' | 'High'>('Low');
-    const [humidity, setHumidity] = useState(50); // %
-    const [temperature, setTemperature] = useState(72); // F
+    const [aqi, setAqi] = useState(weather?.aqi || 45); // Air Quality Index
+    const [pollenLevel, setPollenLevel] = useState<'Low' | 'Medium' | 'High'>(weather?.pollen || 'Low');
+    const [humidity, setHumidity] = useState(weather?.humidity || 50); // %
+    const [temperature, setTemperature] = useState(weather?.temperature || 72); // F
+
+    // Sync with Live Weather when it changes
+    React.useEffect(() => {
+        if (weather) {
+            setAqi(weather.aqi);
+            setHumidity(weather.humidity);
+            setTemperature(weather.temperature);
+            setPollenLevel(weather.pollen);
+        }
+    }, [weather]);
 
     // 2. Patient Profile (Mocked "Patient A")
     const patientProfile = {
@@ -107,7 +120,9 @@ export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ clas
                         </div>
                         <div>
                             <h3 className="font-bold text-slate-800">Environmental Risk</h3>
-                            <p className="text-xs text-slate-500 font-medium">Boston, MA • Live Simulation</p>
+                            <p className="text-xs text-slate-500 font-medium">
+                                {weather ? 'Live Weather Data' : 'Boston, MA • Live Simulation'}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -133,7 +148,7 @@ export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ clas
                                     cy="50%"
                                     r="45%"
                                     className={`fill-none transition-all duration-1000 ease-out ${riskAnalysis < 30 ? 'stroke-emerald-500' :
-                                            riskAnalysis < 60 ? 'stroke-amber-500' : 'stroke-red-500'
+                                        riskAnalysis < 60 ? 'stroke-amber-500' : 'stroke-red-500'
                                         }`}
                                     strokeWidth="12"
                                     strokeDasharray="283"
@@ -146,12 +161,12 @@ export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ clas
                             <div className="absolute inset-0 flex flex-col items-center justify-center">
                                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Risk Level</span>
                                 <span className={`text-5xl font-black ${riskAnalysis < 30 ? 'text-emerald-600' :
-                                        riskAnalysis < 60 ? 'text-amber-600' : 'text-red-600'
+                                    riskAnalysis < 60 ? 'text-amber-600' : 'text-red-600'
                                     }`}>
                                     {Math.round(riskAnalysis)}%
                                 </span>
                                 <span className={`mt-2 px-3 py-1 rounded-full text-[10px] font-bold bg-white shadow-sm border ${riskAnalysis < 30 ? 'text-emerald-600 border-emerald-100' :
-                                        riskAnalysis < 60 ? 'text-amber-600 border-amber-100' : 'text-red-600 border-red-100'
+                                    riskAnalysis < 60 ? 'text-amber-600 border-amber-100' : 'text-red-600 border-red-100'
                                     }`}>
                                     {getRiskLabel(riskAnalysis)}
                                 </span>
@@ -222,8 +237,8 @@ export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ clas
                                 key={level}
                                 onClick={() => setPollenLevel(level as any)}
                                 className={`py-3 text-xs font-bold rounded-xl transition-all border ${pollenLevel === level
-                                        ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-200'
-                                        : 'bg-slate-50 text-slate-500 border-slate-100 hover:border-slate-300'
+                                    ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-200'
+                                    : 'bg-slate-50 text-slate-500 border-slate-100 hover:border-slate-300'
                                     }`}
                             >
                                 {level}
@@ -252,6 +267,61 @@ export const EnvironmentalTrigger: React.FC<EnvironmentalTriggerProps> = ({ clas
                         className="w-full h-3 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-slate-400"
                     />
                 </div>
+            </div>
+            {/* Neural Guardian Agent */}
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 mt-6">
+                <div className="flex justify-between items-center mb-4">
+                    <h3 className="font-bold text-slate-800 text-sm uppercase tracking-wide flex items-center gap-2">
+                        <TrendingUp size={16} className="text-teal-600" /> 3-Day Clinical Forecast
+                    </h3>
+                    <div className="bg-teal-50 text-teal-700 px-2 py-0.5 rounded text-[10px] font-bold border border-teal-100">
+                        LAG ANALYSIS
+                    </div>
+                </div>
+
+                {/* Forecast Logic Visualization */}
+                <div className="h-32 w-full mb-3">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <AreaChart data={[
+                            { day: 'Today', risk: riskAnalysis, type: 'Exposure' },
+                            { day: 'T+1', risk: riskAnalysis * 0.8, type: 'Latent' },
+                            { day: 'T+2', risk: riskAnalysis * 1.3, type: 'Inflammation Peak' }, // The Lag Spike
+                        ]}>
+                            <defs>
+                                <linearGradient id="riskGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#f43f5e" stopOpacity={0.3} />
+                                    <stop offset="95%" stopColor="#f43f5e" stopOpacity={0} />
+                                </linearGradient>
+                            </defs>
+                            <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
+                            <Tooltip
+                                contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                                labelStyle={{ fontWeight: 'bold', color: '#334155' }}
+                            />
+                            <Area
+                                type="monotone"
+                                dataKey="risk"
+                                stroke="#f43f5e"
+                                strokeWidth={2}
+                                fillOpacity={1}
+                                fill="url(#riskGradient)"
+                            />
+                        </AreaChart>
+                    </ResponsiveContainer>
+                </div>
+
+                {/* Clinical Insight for Delayed Onset */}
+                {(riskAnalysis > 40) && (
+                    <div className="flex gap-3 items-start bg-amber-50 p-3 rounded-xl border border-amber-100">
+                        <Info size={16} className="text-amber-600 mt-0.5 shrink-0" />
+                        <div>
+                            <p className="text-xs font-bold text-amber-800 mb-0.5">Delayed Onset Warning</p>
+                            <p className="text-xs text-amber-700 leading-snug">
+                                Scientific Note: High exposure today typically triggers airway inflammation peaks in <strong>48 hours (T+2)</strong>. Consider pre-medicating.
+                            </p>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

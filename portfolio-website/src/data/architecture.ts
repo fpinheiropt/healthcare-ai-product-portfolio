@@ -1,4 +1,10 @@
-import { Server, Database, Brain, Layers, Globe, Smartphone, Lock, Zap, ShieldCheck, Code, FileText, Activity, AlertTriangle } from 'lucide-react';
+import {
+    Server, Database, Brain, Layers, Globe, Smartphone, Lock, Zap, ShieldCheck, Code, FileText, Activity, AlertTriangle, Monitor, Mic, Sparkles, Users, Layout, CheckCircle,
+    Play,
+    Pill,
+    Network,
+    Leaf
+} from 'lucide-react';
 
 export interface TechStackItem {
     name: string;
@@ -190,6 +196,195 @@ export const architectureData: Record<string, ArchitectureData> = {
         keyDecisions: [
             { title: 'Edge Processing', description: 'Privacy-first; no video stored cloud-side.', type: 'privacy' },
             { title: 'Visual Overlay', description: 'Augmented Reality interface for rapid scan.', type: 'performance' }
+        ]
+    },
+    'cliniscript': {
+        id: 'cliniscript',
+        title: 'CliniScript (Ambient AI)',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React (Visualizer)', category: 'frontend' },
+            { name: 'WebSpeech API (Sim)', category: 'ai' },
+            { name: 'NLP / Regex', category: 'backend' },
+            { name: 'Tailwind V4', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Audio Stream', description: 'Real-time voice capture (Microphone)', icon: Mic },
+            { step: 2, label: 'Transcription', description: 'Speech-to-Text Conversion', icon: FileText },
+            { step: 3, label: 'Structuring', description: 'LLM Extraction (SOAP Format)', icon: Brain },
+            { step: 4, label: 'EHR Sync', description: 'Structured Data push to Medical Record', icon: Sparkles }
+        ],
+        keyDecisions: [
+            { title: 'Privacy First', description: 'Local processing (simulation) ensuring PHI never leaves the secure context.', type: 'security' },
+            { title: 'Human-in-the-Loop', description: 'AI drafts the note, but physician sign-off is mandatory.', type: 'security' }
+        ]
+    },
+    'sepsis-sentinel': {
+        id: 'sepsis-sentinel',
+        title: 'SepsisSentinel Architecture',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'NEWS2 Engine', category: 'ai' },
+            { name: 'Tailwind V4', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Vital Simulation', description: 'Generates HR, BP, O2 streams (Mock IO)', icon: Activity },
+            { step: 2, label: 'NEWS2 Calc', description: 'Real-time scoring (Royal College of Physicians)', icon: Brain },
+            { step: 3, label: 'Trend Analysis', description: 'Detects deterioration (Clinical Drift) over time', icon: Monitor },
+            { step: 4, label: 'Alert Trigger', description: 'Red/Amber flags notify clinician of sepsis risk', icon: ShieldCheck }
+        ],
+        keyDecisions: [
+            { title: 'Standardized Scoring', description: 'Strict adherence to NEWS2 protocol ensures clinical validity.', type: 'security' },
+            { title: 'Client-Side Sim', description: 'Vital sign variations are calculated locally for responsive demos.', type: 'performance' }
+        ]
+    },
+    'flowmaster': {
+        id: 'flowmaster',
+        title: 'FlowMaster Architecture',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'Random Forest Sim', category: 'ai' },
+            { name: 'Recharts', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Patient Inflow', description: 'Simulates admission stream & clinical attributes', icon: Users },
+            { step: 2, label: 'Discharge Engine', description: 'Predicts LOS based on social/clinical complexity', icon: Brain },
+            { step: 3, label: 'Capacity Viz', description: 'Projected bed occupancy vs physical limits', icon: Layers },
+            { step: 4, label: 'Bottleneck Alert', description: 'Flags "delayed" discharges affecting throughput', icon: AlertTriangle }
+        ],
+        keyDecisions: [
+            { title: 'Operational Twin', description: 'Simulates hospital flow dynamics to prove "throughput" concepts.', type: 'scalability' },
+            { title: 'Visual Analytics', description: 'Uses extensive charting to demonstrate data storytelling skills.', type: 'performance' }
+        ]
+    },
+    'portersmart': {
+        id: 'portersmart',
+        title: 'PorterSmart Logistics Engine',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'TSP Algorithm', category: 'ai' },
+            { name: 'Framer Motion', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Job Request', description: 'Ward requests patient transport (A -> B)', icon: Smartphone },
+            { step: 2, label: 'Logistics Engine', description: 'Calculates distance matrix between all active jobs', icon: Brain },
+            { step: 3, label: 'Route Optimization', description: 'Solves Traveling Salesman Problem (Nearest Neighbor)', icon: Network },
+            { step: 4, label: 'Dispatch', description: 'Assigns optimal job to nearest idle porter', icon: Zap }
+        ],
+        keyDecisions: [
+            { title: 'Client-Side Optimization', description: 'TSP algorithm runs in-browser for immediate dispatch feedback.', type: 'performance' },
+            { title: 'Geo-Spatial Visualization', description: 'SVG-based map provides real-time situational awareness.', type: 'scalability' }
+        ]
+    },
+    'mindbridge': {
+        id: 'mindbridge',
+        title: 'MindBridge Triage Engine',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'Clinical Logic', category: 'ai' },
+            { name: 'Framer Motion', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'User Input', description: 'Answers PHQ-9/GAD-7 questions via chat UI', icon: Smartphone },
+            { step: 2, label: 'Scoring Engine', description: 'Real-time summation and severity stratification', icon: Brain },
+            { step: 3, label: 'Risk Analysis', description: 'Maps score to clinical depression/anxiety thresholds', icon: Activity },
+            { step: 4, label: 'Triage Output', description: 'Generates recommendation and crisis resources', icon: FileText }
+        ],
+        keyDecisions: [
+            { title: 'Privacy First', description: 'All assessment logic runs locally in-browser; no data stored.', type: 'privacy' },
+            { title: 'Conversational UI', description: 'Chat interface reduces cognitive load compared to long forms.', type: 'performance' }
+        ]
+    },
+    'patho-ai': {
+        id: 'patho-ai',
+        title: 'Patho-AI Staging',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'TNM Logic', category: 'ai' },
+            { name: 'Framer Motion', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Clinical Input', description: 'Clinician selects T, N, M values via interactive UI', icon: Smartphone },
+            { step: 2, label: 'Staging Engine', description: 'Lookup algorithm matches criteria to AJCC 8th Ed. tables', icon: Brain },
+            { step: 3, label: 'Validation', description: 'Checks for impossible combinations (e.g., T0 with M1)', icon: Activity },
+            { step: 4, label: 'Output', description: 'Returns prognostic stage group (e.g., IIIA) and guidelines', icon: FileText }
+        ],
+        keyDecisions: [
+            { title: 'Deterministic Logic', description: 'Uses hard-coded clinical rules instead of ML for 100% explainability.', type: 'security' },
+            { title: 'Instant Feedback', description: 'Stage updates in real-time as inputs change.', type: 'performance' }
+        ]
+    },
+    'gestalink': {
+        id: 'gestalink',
+        title: 'Maternal Care Agent',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'Risk Engine', category: 'ai' },
+            { name: 'Framer Motion', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Symptom Monitor', description: 'Patient logs potential preeclampsia signs (headache, vision)', icon: Smartphone },
+            { step: 2, label: 'Safety Agent', description: 'Engine scans inputs against ACOG clinical guidelines', icon: Brain },
+            { step: 3, label: 'Risk Stratification', description: 'Classifies status as Low (Green) to High (Red)', icon: Activity },
+            { step: 4, label: 'Guidance Output', description: 'Delivers actionable advice (e.g., "Go to Triage")', icon: FileText }
+        ],
+        keyDecisions: [
+            { title: 'Deterministic Safety', description: 'Uses zero-hallucination rule sets for high-stakes maternal health.', type: 'security' },
+            { title: 'Empathic UI', description: 'Warm colors and soft animations reduce patient anxiety.', type: 'privacy' }
+        ]
+    },
+    'rxoptimize': {
+        id: 'rxoptimize',
+        title: 'Pharmacist Safety Agent',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'Interaction Logic', category: 'ai' },
+            { name: 'Lucide Icons', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Regimen Input', description: 'User adds medications to the active patient profile', icon: Pill },
+            { step: 2, label: 'Safety Scanner', description: 'Agent cross-references drugs against interaction rules', icon: Brain },
+            { step: 3, label: 'Risk Analysis', description: 'Flags Contraindicated, Major, or Moderate risks', icon: Activity },
+            { step: 4, label: 'Clinical Output', description: 'Provides specific management guidelines for each risk', icon: FileText }
+        ],
+        keyDecisions: [
+            { title: 'Back-Office Design', description: 'Dense, high-contrast UI covering complex data for clinicians.', type: 'performance' },
+            { title: 'Proactive Alerting', description: 'Agent pushes safety warnings immediately, acting as a second pair of eyes.', type: 'security' }
+        ]
+    },
+    'ecoward': {
+        id: 'ecoward',
+        title: 'Sustainability Agent',
+        diagramType: 'flow',
+        techStack: [
+            { name: 'React', category: 'frontend' },
+            { name: 'TypeScript', category: 'backend' },
+            { name: 'Carbon Engine', category: 'ai' },
+            { name: 'Tailwind v4', category: 'frontend' }
+        ],
+        dataFlow: [
+            { step: 1, label: 'Sensor Input', description: 'IoT sensors on HVAC and Waste Bins feed real-time data', icon: Network },
+            { step: 2, label: 'Eco-Engine', description: 'Agent calculates carbon footprint and detects anomalies', icon: Leaf },
+            { step: 3, label: 'Optimization', description: 'Identifies energy spikes during peak hours', icon: Zap },
+            { step: 4, label: 'Action Plan', description: 'Suggests specific operational changes to reduce load', icon: FileText }
+        ],
+        keyDecisions: [
+            { title: 'Green Computing', description: 'Lightweight code architecture to minimize device energy consumption.', type: 'performance' },
+            { title: 'Visual Impact', description: 'Gamified dashboard (Real-time CO2e saved) drives staff behavior change.', type: 'privacy' }
         ]
     }
 };

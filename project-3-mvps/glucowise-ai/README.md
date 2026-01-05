@@ -12,6 +12,24 @@ GlucoWise AI is a comprehensive digital health solution designed to help patient
 
 **Production**: [https://glucowise-n8bumzr26-franciscos-projects-73f8717a.vercel.app](https://glucowise-n8bumzr26-franciscos-projects-73f8717a.vercel.app)
 
+## 🏗️ Architecture
+**Safety First**: A physics-based metabolic engine validates all meal inputs before prediction.
+
+```mermaid
+graph TD
+    Meal[Meal Input] --> Physics[⚛️ Metabolic Physics]
+    Physics -- Carbs > 75g --> Severe[🔴 Severe Spike Warning]
+    Physics -- Fiber > 10g --> Moderate[🟡 Moderate Spike]
+    Physics -- Low Load --> Stable[🟢 Stable Prediction]
+    Stable --> AI[Glucose Prediction Engine]
+```
+
+## 🧪 Testing
+Run metabolic safety tests with:
+```bash
+npm test
+```
+
 ## ✨ Key Features
 
 ### 1. **AI Meal Predictor** ⭐ NEW

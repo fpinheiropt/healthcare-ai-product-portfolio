@@ -1,19 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PatientDashboard from './components/PatientDashboard';
 import ProviderDashboard from './components/ProviderDashboard';
 import { mockPatients, mockWeather } from './services/mockData';
-import { DailyLog } from './types';
-import { Stethoscope, User, Wind } from 'lucide-react';
+import { fetchWeather } from './services/weatherService';
+import { DailyLog, WeatherData } from './types';
+import { Stethoscope, User, Wind, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [userType, setUserType] = useState<'patient' | 'provider'>('patient');
   const [patients, setPatients] = useState(mockPatients);
+  const [weather, setWeather] = useState<WeatherData>(mockWeather);
+  const [loadingWeather, setLoadingWeather] = useState(false);
+  const [locationName, setLocationName] = useState('Local Weather');
 
   // Simulate current patient logged in (John Doe)
   const currentPatientId = 'p1';
   const patientIndex = patients.findIndex(p => p.id === currentPatientId);
   const currentPatient = patients[patientIndex];
+
+  useEffect(() => {
+    // Fetch Live Weather on Mount
+    if (navigator.geolocation) {
+      setLoadingWeather(true);
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          const data = await fetchWeather(latitude, longitude);
+          setWeather(data);
+          setLocationName('Current Location');
+          setLoadingWeather(false);
+        },
+        (error) => {
+          console.error("Geo error:", error);
+          setLoadingWeather(false);
+          // Fallback to NY or keep mock
+        }
+      );
+    }
+  }, []);
 
   const handleAddLog = (log: DailyLog) => {
     const updatedPatients = [...patients];
@@ -94,7 +119,7 @@ function App() {
                 <div className="h-full w-full overflow-y-auto scrollbar-hide pt-8">
                   <PatientDashboard
                     patient={currentPatient}
-                    weather={mockWeather}
+                    weather={weather}
                     onAddLog={handleAddLog}
                     onTakeMedication={handleTakeMedication}
                   />

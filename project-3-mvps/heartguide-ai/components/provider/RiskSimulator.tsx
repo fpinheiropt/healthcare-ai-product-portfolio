@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Patient } from '../../types';
-import { Activity, ArrowRight, TrendingUp, Wind, Scale, Pill } from 'lucide-react';
+import { Activity, ArrowRight, TrendingUp, Wind, Scale, Pill, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface RiskSimulatorProps {
     patient: Patient;
@@ -117,6 +118,43 @@ export const RiskSimulator: React.FC<RiskSimulatorProps> = ({ patient }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Controls */}
                 <div className="space-y-6">
+                    {/* Digital Twin Visualization - Replaces simple gauge */}
+                    <div className="flex flex-col items-center justify-center p-6 relative">
+                        {/* Beating Heart Animation */}
+                        <motion.div
+                            animate={{
+                                scale: [1, 1.15, 1],
+                            }}
+                            transition={{
+                                duration: simulatedScore > 50 ? 0.6 : 1.0, // Tachycardia if high risk
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                            className={`mb-4 drop-shadow-2xl transition-colors duration-1000 ${simulatedScore > 70 ? 'text-purple-600' :
+                                    simulatedScore > 40 ? 'text-red-500' : 'text-emerald-500'
+                                }`}
+                        >
+                            <Heart strokeWidth={0} fill="currentColor" size={120} />
+                            {/* Inner Pulse for Ischemia */}
+                            {simulatedScore > 70 && (
+                                <div className="absolute inset-0 bg-transparent">
+                                    <motion.div
+                                        animate={{ opacity: [0, 0.5, 0] }}
+                                        transition={{ duration: 0.3, repeat: Infinity, repeatDelay: 0.3 }}
+                                        className="w-full h-full rounded-full bg-purple-500 blur-xl opacity-20"
+                                    />
+                                </div>
+                            )}
+                        </motion.div>
+
+                        <div className="text-center z-10">
+                            <span className="text-4xl font-bold text-slate-800">{simulatedScore}%</span>
+                            <p className="text-sm font-bold uppercase tracking-wider text-slate-500 mt-1">
+                                {simulatedScore > 70 ? 'Critical Risk' : simulatedScore > 40 ? 'Moderate Risk' : 'Stable'}
+                            </p>
+                        </div>
+                    </div>
+
                     {/* Weight Slider */}
                     <div>
                         <div className="flex justify-between mb-2">

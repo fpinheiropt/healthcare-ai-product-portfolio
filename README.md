@@ -1,109 +1,72 @@
-# Hi, I'm Francisco 👋
+# The Bionic SNS: A Sovereign AI Ecosystem 🇵🇹
 
-**MD Building AI Healthcare Products | AI Product Specialist**
+**Empowering the National Health Service with Local, Deterministic Intelligence.**
 
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
-[![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/fmmpinheiro)
+> "We are not just procuring software; we are building a nervous system for the state."
 
-## 🚀 What I'm Working On
+---
 
-- 🏥 **Analyzing 10 healthcare AI products** to understand product strategy patterns
-- 📄 **Writing professional PRDs** with clinical user research (cardiologists, endocrinologists, pulmonologists)
-- 🤖 **Building 3 AI healthcare product MVPs**: HeartGuide AI, GlucoWise AI, and BreathEasy AI (All Deployed)
-- 💼 **Interactive "CVe"**: A printable, portfolio-integrated resume system
-- 🎓 **Completing EDIT Data Science & Advanced AI bootcamps** (Future Plan)
+## 🏗️ The Vision
+This repository houses the **18 AI Agents** comprising the "National Health OS"—a comprehensive strategy to transform the Portuguese SNS from a reactive bureaucracy into a proactive, preventative organization.
 
-## 🔍 My Unique Advantage
+Unlike traditional SaaS, these agents are built on **Sovereign AI** principles:
+*   **Local Intelligence**: Fine-tuned Small Language Models (SLMs) running on-premise.
+*   **Data Sovereignty**: FHIR-native architecture ensuring patient data never leaves the national grid.
+*   **Clinical Determinism**: Algorithms validated against standard medical protocols (Manchester Triage, NEWS2, AJCC).
 
-I bridge three worlds that rarely intersect: **clinical medicine, AI/ML engineering, and product thinking**. As a physician with a Master's in Biomedical Engineering, I combine deep clinical expertise with technical skills to build AI solutions that truly address healthcare challenges. 
+---
 
-## 🛠️ Technical Stack
+## 🗺️ The Ecosystem Map
 
-### Product Management
-- **Frameworks**: Reforge, RICE prioritization, Jobs-to-be-Done
-- **Tools**: Figma, Notion, Jira, Productboard
-- **Skills**: PRD writing, user research, roadmapping, agile methodologies
+The strategy is organized into **3 Strategic Environments**, mirroring the patient journey. Each agent maps to a specific **Sword Health** business vertical, demonstrating alignment with enterprise-grade product strategy.
 
-### AI/ML Development
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)
-- **ML Frameworks**: TensorFlow, PyTorch, Scikit-learn
-- **NLP**: Transformers, spaCy, NLTK
-- **Model Evaluation**: ROC/AUC, precision-recall, confusion matrices
+### 🏠 Environment I: The Prevention Cloud (Home & Remote) 
+*Focus: Chronic Care Management & Remote Monitoring.*
+**Sword Vertical: Digital Health / Chronic Care**
 
-### Healthcare Technology
-- **Standards**: HL7, FHIR, DICOM
-- **Regulatory**: HIPAA, GDPR, FDA regulatory pathways
-- **Clinical Systems**: EHR/EMR integration, clinical workflows
+| Agent ID | Name | Role | Vertical | Live Demo |
+| :--- | :--- | :--- | :--- | :--- |
+| **A1** | [**HeartGuide AI**](./project-3-mvps/heartguide-ai) | 🫀 CHF & Hypertension Twin | Sword Heart | [[Link]](https://heartguide-etfetmhu0-franciscos-projects-73f8717a.vercel.app) |
+| **A2** | [**BreathEasy AI**](./project-3-mvps/breatheasy-ai) | 🫁 Asthma/COPD Environmental Guardian | Sword Pulmonary | [[Link]](https://breatheasy-2afc4jkr1-franciscos-projects-73f8717a.vercel.app) |
+| **A3** | [**GlucoWise AI**](./project-3-mvps/glucowise-ai) | 🩸 Diabetes Metabolic Coach | Sword Metabolic | [[Link]](https://glucowise-4vg3gairy-franciscos-projects-73f8717a.vercel.app) |
+| **A4** | [**MindBridge**](./project-3-mvps/mindbridge) | 🧠 Mental Health Triage (PHQ-9) | Sword Mental | [[Link]](https://mindbridge-franciscos-projects-73f8717a.vercel.app/) |
+| **A5** | [**GestaLink**](./project-3-mvps/gestalink) | 🤰 High-Risk Pregnancy Guardian | Women's Health | [[Link]](https://gestalink-franciscos-projects-73f8717a.vercel.app/) |
 
-## 🚀 Current Projects
+### 🏥 Environment II: The Access Layer (Primary Care & ER)
+*Focus: Triage, Routing, and Gatekeeping.*
+**Sword Vertical: Enterprise / Public Sector**
 
-### 🌐 [View Live Portfolio](https://portfolio-website-franciscos-projects-73f8717a.vercel.app/)
+| Agent ID | Name | Role | Vertical | Live Demo |
+| :--- | :--- | :--- | :--- | :--- |
+| **A6** | [**Triage-Os**](./project-3-mvps/triage-os) | 🛡️ National Pre-Hospital Triage (SNS 24) | Enterprise | [[Link]](https://triage-os-franciscos-projects-73f8717a.vercel.app/) |
+| **A7** | [**FastTrack**](./project-3-mvps/fasttrack) | ⚡ ED Self-Service Kiosk (MTS) | Enterprise | [[Link]](https://fasttrack-franciscos-projects-73f8717a.vercel.app/) |
+| **A8** | [**Sentinel**](./project-3-mvps/sentinel) | 👁️ Waiting Room Computer Vision | Safety Systems | [[Link]](https://sentinel-es85ln6nf-franciscos-projects-73f8717a.vercel.app) |
+| **A9** | [**Surge Commander**](./project-3-mvps/surge-commander) | 🚨 National Capacity OS | Public Health | [[Link]](https://surge-commander-ja5e3ewhr-franciscos-projects-73f8717a.vercel.app) |
+| **A10** | [**RxOptimize**](./project-3-mvps/rxoptimize) | 💊 Pharmacist Safety Agent | Pharmacy | [[Link]](https://rxoptimize-franciscos-projects-73f8717a.vercel.app/) |
 
-### 1. AI Healthcare Product MVPs (LIVE)
+### 🏨 Environment III: The Smart Hospital (Inpatient)
+*Focus: Flow, Safety, and Clinical Efficiency.*
+**Sword Vertical: Health Systems / Provider Solutions**
 
-#### 🫀 [HeartGuide AI](https://heartguide-ai.vercel.app/)
-AI-powered clinical decision support system reducing 30-day heart failure readmissions.
-- **Features**: 
-  - ➡️ **Interactive Risk Simulator**: Real-time Monte Carlo simulation of patient risk.
-  - 🏗️ **System Architecture View**: Interactive modal showing the "Frontend -> API -> ML" pipeline.
-  - **Tech Stack**: React, Python (FastAPI), TensorFlow Lite, PostgreSQL.
-- **Status**: ✅ Deployed
+| Agent ID | Name | Role | Vertical | Live Demo |
+| :--- | :--- | :--- | :--- | :--- |
+| **A11** | [**SepsisSentinel**](./project-3-mvps/sepsis-sentinel) | 🦠 Ward Automated Safety (NEWS2) | Clinical Safety | [[Link]](https://sepsis-sentinel-franciscos-projects-73f8717a.vercel.app/) |
+| **A12** | [**FlowMaster**](./project-3-mvps/flowmaster) | 🌊 Discharge Prediction Engine | Operations | [[Link]](https://flowmaster-franciscos-projects-73f8717a.vercel.app/) |
+| **A13** | [**CliniScript**](./project-3-mvps/cliniscript) | 🎙️ Ambient Documentation Scribe | Provider Tools | [[Link]](https://cliniscript-franciscos-projects-73f8717a.vercel.app/) |
+| **A14** | [**DocuFlow**](./project-3-mvps/docu-flow) | 📝 Structured Note Generator | Provider Tools | [[Link]](https://docu-flow-franciscos-projects-73f8717a.vercel.app/) |
+| **A15** | [**Patho-AI**](./project-3-mvps/patho-ai) | 🔬 Oncology TNM Staging | Oncology | [[Link]](https://patho-ai-franciscos-projects-73f8717a.vercel.app/) |
+| **A16** | [**CareFlow Architect**](./project-3-mvps/careflow-architect) | 📐 No-Code Protocol Builder | Governance | [[Link]](https://careflow-architect-franciscos-projects-73f8717a.vercel.app/) |
+| **A17** | [**PorterSmart**](./project-3-mvps/portersmart) | 🚚 Logistics Optimization (TSP) | Operations | [[Link]](https://portersmart-franciscos-projects-73f8717a.vercel.app/) |
+| **A18** | [**EcoWard**](./project-3-mvps/ecoward) | ♻️ Sustainability & Waste Agent | ESG | [[Link]](https://ecoward-franciscos-projects-73f8717a.vercel.app/) |
 
-#### 🫁 [BreathEasy AI](https://breatheasy-ai.vercel.app/)
-Intelligent asthma management platform with environmental trigger prediction.
-- **Features**:
-  - ➡️ **Environmental Simulator**: Real-time AQI & Weather trigger impact analysis.
-  - 🏗️ **System Architecture View**: Detailed visualizations of the data ingestion pipeline.
-  - **Tech Stack**: Next.js, Redis (Geo-spatial caching), Scikit-learn, OpenWeather API.
-- **Status**: ✅ Deployed
+---
 
-#### 🩸 [GlucoWise AI](https://glucowise-ai.vercel.app/)
-Metabolic health platform for Type 2 diabetes management.
-- **Features**:
-  - ➡️ **Meal Predictor**: Computer Vision + ML to predict glucose spikes from food inputs.
-  - 🏗️ **System Architecture View**: Full-stack schema including XGBoost model integration.
-  - **Tech Stack**: React, Node.js, XGBoost, MongoDB.
-- **Status**: ✅ Deployed
+## 🛠️ The Tech Stack
+*   **Frontend**: React, Tailwind CSS (v4/v3), Framer Motion.
+*   **Simulation**: Custom "Agent State" Hooks, Recharts, Random Forest Mocks.
+*   **Validation**: VitestUnit Tests, Zod Schema Validation.
+*   **Deployment**: Vercel Edge Network.
 
-### 3. Product Requirements Documents (PRDs)
-- **[Heart Failure Readmission Prevention](project-2-prd/HeartGuide-AI-PRD.md)**: AI-powered solution to reduce 30-day readmissions.
-- **[BreathEasy AI (Asthma)](project-2-prd/BreathEasy-AI-PRD.md)**: Smart asthma management with environmental trigger prediction.
-- **[GlucoWise AI (Diabetes)](project-2-prd/GlucoWise-AI-PRD.md)**: Intelligent coaching platform for Type 2 diabetes lifestyle management.
+---
 
-
-
-## 🔍 Product Teardowns
-
-- **[Sword Health](project-1-teardowns/Sword-Health-Teardown.md)**: Strategic analysis of the "Behavioral Gap" in digital MSK care & "Smart Nudge" feature proposal.
-- **[Omada Health](project-1-teardowns/Omada-Health-Teardown.md)**: "Ozempic Era" survival strategy & "Smart Cart" logistics integration proposal.
-- **[Hello Heart](project-1-teardowns/Hello-Heart-Teardown.md)**: Frictionless cardiovascular health monitoring.
-
-
-## 📚 Education & Certifications
-
-- **MD** - Faculdade de Medicina da Universidade do Porto (FMUP) | 2017-2023
-- **MSc Biomedical Engineering** - Instituto Superior Técnico (IST), Universidade de Lisboa | 2013-2018
-- **EDIT Data Science Bootcamp** (Future Projetc)
-- **EDIT Advanced AI Bootcamp** (Future Projetc)
-
-## 📝 Blog & Writing
-
-I document my work at the intersection of Clinical Medicine and AI through regular writing:
-- Weekly posts on [LinkedIn](https://linkedin.com/in/fmmpinheiro)
-
-## 🤝 Let's Connect
-
-- Healthcare technology leaders
-- AI/ML engineers in healthcare
-- Product managers in digital health
-- Clinical professionals interested in AI
-
-📧 **Email**: fpinheiro921@gmail.com 
-💼 **LinkedIn**: [Francisco Pinheiro](https://linkedin.com/in/fmmpinheiro)  
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+> Built by **Francisco Pinheiro** (MD, MBA) | [Portfolio](https://portfolio-website-franciscos-projects-73f8717a.vercel.app/)

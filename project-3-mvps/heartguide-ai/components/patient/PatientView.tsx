@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Patient, SymptomLog, FoodEntry } from '../../types';
 import AIChatInterface from '../AIChatInterface';
+import AgentInsight from '../AgentInsight';
 import RecentActivityLog from '../RecentActivityLog';
 import { Heart, Scale, Activity, AlertCircle, Camera, Utensils, MessageSquare, Phone, Check, BookOpen, TrendingUp, Info } from 'lucide-react';
 import { estimateSodium, chatWithNurseAI, assessPatientRisk } from '../../services/geminiService';
 import { EducationView } from './EducationView';
-
-// ... (keep existing code until the tabs)
-
-
+import { DecompensationMonitor } from './DecompensationMonitor';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PatientViewProps {
@@ -198,69 +196,74 @@ export const PatientView: React.FC<PatientViewProps> = ({ patient, onUpdatePatie
 
         {activeTab === 'home' && (
           <div className="p-5 space-y-6">
-            {/* Status Card */}
-            <div className="bg-gradient-to-br from-teal-600 to-teal-800 rounded-3xl p-6 text-white shadow-xl shadow-teal-900/20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
-              <div className="flex justify-between items-start mb-6 relative z-10">
+
+            {/* Neural Guardian Agent */}
+            <AgentInsight
+              riskScore={simulatedRiskScore}
+              weightChange={simulatedWeight - 150} // Using baseline 150 for demo logic
+              symptomCount={simulatedSob}
+            />
+
+            {/* Neural Guardian Agent */}
+            <AgentInsight
+              riskScore={simulatedRiskScore}
+              weightChange={simulatedWeight - 150} // Using baseline 150 for demo logic
+              symptomCount={simulatedSob}
+            />
+
+            {/* Smart Decompensation Monitor (New Feature) */}
+            <div className="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+
+              <div className="flex justify-between items-start mb-4 relative z-10">
                 <div>
-                  <p className="text-teal-100 text-sm font-medium mb-1">Heart Health Score</p>
+                  <p className="text-indigo-200 text-sm font-medium mb-1">Decompensation Risk</p>
                   <div className="flex items-baseline gap-2">
-                    <h3 className="text-5xl font-bold tracking-tighter">{100 - Math.round(patient.riskScore)}</h3>
-                    <span className="text-lg opacity-60 font-medium">/100</span>
+                    <h3 className="text-3xl font-bold tracking-tight">Multi-Factor Analysis</h3>
                   </div>
                 </div>
-                <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md">
-                  <Heart className="text-white fill-white" size={28} />
+                <div className="bg-white/10 p-2.5 rounded-xl backdrop-blur-md">
+                  <Activity className="text-indigo-400" size={24} />
                 </div>
               </div>
 
-              {/* Risk Simulator Toggle */}
-              <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/10">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp size={16} className="text-teal-200" />
-                    <span className="text-sm font-medium text-teal-50">Risk Simulator</span>
+              <DecompensationMonitor
+                baselineWeight={150} // Mock baseline
+                currentWeight={simulatedWeight}
+                symptomScore={simulatedSob}
+              />
+
+              {/* Simulation Controls (Preserved for Demo) */}
+              <div className="mt-6 pt-4 border-t border-white/10 space-y-4">
+                <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Risk Simulator Inputs</p>
+                <div>
+                  <div className="flex justify-between text-xs text-indigo-200 mb-1.5">
+                    <span>Weight Input</span>
+                    <span className="font-bold">{simulatedWeight} lbs</span>
                   </div>
-                  <Info size={14} className="text-teal-300" />
+                  <input
+                    type="range"
+                    min={140}
+                    max={160}
+                    step={0.5}
+                    value={simulatedWeight}
+                    onChange={(e) => setSimulatedWeight(parseFloat(e.target.value))}
+                    className="w-full h-1.5 bg-indigo-500/30 rounded-full appearance-none cursor-pointer accent-white"
+                  />
                 </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between text-xs text-teal-100 mb-1.5">
-                      <span>Weight Impact</span>
-                      <span className="font-bold">{simulatedWeight} lbs</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={140}
-                      max={160}
-                      step={0.5}
-                      value={simulatedWeight}
-                      onChange={(e) => setSimulatedWeight(parseFloat(e.target.value))}
-                      className="w-full h-1.5 bg-teal-900/30 rounded-full appearance-none cursor-pointer accent-white"
-                    />
+                <div>
+                  <div className="flex justify-between text-xs text-indigo-200 mb-1.5">
+                    <span>Symptom Severity</span>
+                    <span className="font-bold">{simulatedSob}/10</span>
                   </div>
-                  <div>
-                    <div className="flex justify-between text-xs text-teal-100 mb-1.5">
-                      <span>Symptom Severity</span>
-                      <span className="font-bold">{simulatedSob}/10</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={1}
-                      max={10}
-                      value={simulatedSob}
-                      onChange={(e) => setSimulatedSob(parseInt(e.target.value))}
-                      className="w-full h-1.5 bg-teal-900/30 rounded-full appearance-none cursor-pointer accent-white"
-                    />
-                  </div>
-
-                  <div className="pt-2 border-t border-white/10 flex justify-between items-center">
-                    <span className="text-xs text-teal-200">Simulated Risk Score:</span>
-                    <span className={`text-sm font-bold ${simulatedRiskScore > 50 ? 'text-red-300' : 'text-emerald-300'}`}>
-                      {Math.round(simulatedRiskScore)}%
-                    </span>
-                  </div>
+                  <input
+                    type="range"
+                    min={1}
+                    max={10}
+                    value={simulatedSob}
+                    onChange={(e) => setSimulatedSob(parseInt(e.target.value))}
+                    className="w-full h-1.5 bg-indigo-500/30 rounded-full appearance-none cursor-pointer accent-white"
+                  />
                 </div>
               </div>
             </div>

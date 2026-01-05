@@ -61,6 +61,9 @@ export interface WeatherData {
   pm25: number;
   temperature: number;
   humidity: number;
-  pollen: 'Low' | 'Moderate' | 'High';
+  windSpeed: number; // Added
+  isDay: boolean; // Added
+  weatherCode: number; // Added
+  pollen: string; // Changed to string to support "High (Grass)"
   condition: string;
 }

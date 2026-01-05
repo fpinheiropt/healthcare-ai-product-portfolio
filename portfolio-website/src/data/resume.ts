@@ -17,7 +17,7 @@ export interface SkillCategory {
 }
 
 export const resumeData = {
-    bio: "I'm an Internal Medicine Resident with a Master's in Biomedical Engineering. I combine deep clinical expertise with technical skills in AI/ML to build products that deliver real-world impact.",
+    bio: "I have the privilege of using my talent to bring people back to life. I treat product development with the same urgency as a code blue. My work is not about 'users'; it's about patients waiting on the other side.",
     experience: [
         {
             role: "Internal Medicine Resident",

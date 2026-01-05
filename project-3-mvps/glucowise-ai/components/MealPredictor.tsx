@@ -29,16 +29,19 @@ const MODEL_PARAMS = {
 
 interface MealPredictorProps {
     currentGlucose: number;
+    onPredictionUpdate?: (peak: number, carbs: number) => void;
 }
 
-export const MealPredictor: React.FC<MealPredictorProps> = ({ currentGlucose }) => {
+export const MealPredictor: React.FC<MealPredictorProps> = ({ currentGlucose, onPredictionUpdate }) => {
     const [carbs, setCarbs] = useState(60); // grams
     const [insulin, setInsulin] = useState(5); // units
     const [mealType, setMealType] = useState('Balanced');
 
-    // Patient Profile (Mocked based on "John" persona)
+    // ... (rest of the logic remains same until data calculation) ...
+
+    // Mock Patient Profile
     const patientProfile = {
-        Glucose: 145, // Fasting avg
+        Glucose: 145,
         BMI: 28.5,
         Age: 42
     };
@@ -104,6 +107,14 @@ export const MealPredictor: React.FC<MealPredictorProps> = ({ currentGlucose }) 
     const minGlucose = Math.min(...data.map(d => d.glucose));
     const isHigh = peakGlucose > 180;
     const isLow = minGlucose < 70;
+
+    // Report back to parent
+    useEffect(() => {
+        if (onPredictionUpdate) {
+            onPredictionUpdate(peakGlucose, carbs);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [peakGlucose, carbs]);
 
     return (
         <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">

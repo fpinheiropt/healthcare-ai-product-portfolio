@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ec4899;
+  /* Pink 500 */
+  --color-brand-secondary: #f43f5e;
+  /* Rose 500 */
+  --font-display: 'Inter', sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-family: 'Inter', system-ui, sans-serif;
+}

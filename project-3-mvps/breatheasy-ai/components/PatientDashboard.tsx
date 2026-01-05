@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AIChatInterface from './AIChatInterface';
+import AgentInsight from './AgentInsight';
 import RecentActivityLog from './RecentActivityLog';
 import { Patient, WeatherData, DailyLog, Medication, Zone } from '../types';
 
@@ -112,8 +113,16 @@ const PatientDashboard: React.FC<Props> = ({ patient, weather, onAddLog, onTakeM
       <div className="flex-1 overflow-y-auto pb-24 scroll-smooth">
         {activeTab === 'home' && (
           <div className="p-5 space-y-6">
+            {/* Neural Guardian Agent */}
+            <AgentInsight
+              aqi={weather.aqi || 45} // Fallback if missing
+              pollenLevel={weather.pollen.split(' ')[0]} // "High"
+              pollenDetail={weather.pollen.includes('(') ? weather.pollen.substring(weather.pollen.indexOf('(')) : ''} // "(Grass)"
+              isIndoors={false}
+            />
+
             {/* Environmental Trigger Simulator */}
-            <EnvironmentalTrigger className="mb-6" />
+            <EnvironmentalTrigger weather={weather} className="mb-6" />
 
             {/* Current Status Zone - Matching HeartGuide AI */}
             <div className="bg-gradient-to-br from-teal-600 to-teal-800 rounded-3xl p-6 text-white shadow-xl shadow-teal-900/20 relative overflow-hidden">

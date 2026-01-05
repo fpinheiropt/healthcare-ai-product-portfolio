@@ -15,8 +15,13 @@
     font-family: var(--font-sans);
     @apply bg-slate-50 text-slate-900 antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 }
@@ -25,7 +30,7 @@
   .glass-panel {
     @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
   }
-  
+
   .card {
     @apply bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300;
   }

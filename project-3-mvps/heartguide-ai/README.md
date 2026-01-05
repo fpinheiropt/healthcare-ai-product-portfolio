@@ -100,10 +100,24 @@ py ml-pipeline/train_model.py
 
 1. Navigate to **Provider Portal**
 2. Select a patient from the queue (e.g., Martha Stuart - 78% baseline risk)
-3. Scroll to the **AI Risk Simulator** section
-4. Adjust clinical parameters:
-   - **Weight Change**: Simulate fluid retention (0-5kg)
-   - **Shortness of Breath**: Toggle respiratory symptoms
+3. Scroll to## 🏗️ Architecture
+This system follows the **Sword Intelligence "Safety First"** design pattern. A deterministic guardrail validates all clinical data *before* it reaches the LLM layer.
+
+```mermaid
+graph TD
+    UserInput[User Vitals Input] --> SafetyGuard[🛡️ Safety Guardrail]
+    SafetyGuard -- Critical Risk --> CriticalAlert[🚨 Immediate Red Alert]
+    SafetyGuard -- Low/Mod Risk --> LLM[✨ Clinical LLM]
+    LLM --> Advice[Personalized Guidance]
+    CriticalAlert --> Call[Simulate 911 Call]
+```
+
+## 🧪 Testing (Deterministic Safety)
+We use **Vitest** to ensure the Safety Guardrail never hallucinates on critical values using `npm test`.
+
+```bash
+npm test
+```
    - **Missed Medication**: Simulate non-adherence
 5. Observe real-time risk score updates and AI explanations
 

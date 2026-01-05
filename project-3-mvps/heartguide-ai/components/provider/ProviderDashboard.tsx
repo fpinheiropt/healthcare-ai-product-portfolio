@@ -1,7 +1,7 @@
 import React from 'react';
 import { Patient, RiskLevel } from '../../types';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Area, AreaChart } from 'recharts';
-import { AlertTriangle, TrendingUp, Users, Activity, ChevronRight, Search, Filter, Bell } from 'lucide-react';
+import { AlertTriangle, TrendingUp, Users, Activity, ChevronRight, Search, Filter, Bell, Sparkles, CheckCircle, XCircle } from 'lucide-react';
 import { RiskSimulator } from './RiskSimulator';
 
 interface ProviderDashboardProps {
@@ -12,6 +12,14 @@ interface ProviderDashboardProps {
 
 export const ProviderDashboard: React.FC<ProviderDashboardProps> = ({ patients, onSelectPatient, selectedPatientId }) => {
   const selectedPatient = patients.find(p => p.id === selectedPatientId);
+  const [proposalStatus, setProposalStatus] = React.useState<'pending' | 'approved' | 'rejected'>('pending');
+
+  // Reset proposal status when switching patients checks
+  React.useEffect(() => {
+    if (selectedPatientId !== 'p1') {
+      setProposalStatus('pending');
+    }
+  }, [selectedPatientId]);
 
   const getRiskColor = (level: RiskLevel) => {
     switch (level) {
@@ -112,6 +120,66 @@ export const ProviderDashboard: React.FC<ProviderDashboardProps> = ({ patients, 
                       <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-medium">ID: #{selectedPatient.id}</span>
                       <span>Last Check-in: {selectedPatient.lastCheckIn ? new Date(selectedPatient.lastCheckIn).toLocaleDateString() : 'N/A'}</span>
                     </div>
+
+                    {/* AI Human-in-the-Loop Proposal */}
+                    {selectedPatient.id === 'p1' && (
+                      <div className="mb-8 animate-in fade-in slide-in-from-top-4 duration-500">
+                        <div className={`rounded-2xl border p-5 transition-all duration-300 ${proposalStatus === 'pending' ? 'bg-indigo-50/50 border-indigo-100' :
+                            proposalStatus === 'approved' ? 'bg-emerald-50 border-emerald-100' :
+                              'bg-slate-50 border-slate-200 opacity-75'
+                          }`}>
+                          <div className="flex items-start gap-4">
+                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm shrink-0 ${proposalStatus === 'pending' ? 'bg-indigo-600 text-white' :
+                                proposalStatus === 'approved' ? 'bg-emerald-600 text-white' :
+                                  'bg-slate-400 text-white'
+                              }`}>
+                              {proposalStatus === 'approved' ? <CheckCircle size={24} /> :
+                                proposalStatus === 'rejected' ? <XCircle size={24} /> :
+                                  <Sparkles size={24} className="animate-pulse" />}
+                            </div>
+
+                            <div className="flex-1">
+                              <div className="flex justify-between items-center mb-1">
+                                <h4 className={`font-bold text-sm tracking-wide uppercase ${proposalStatus === 'approved' ? 'text-emerald-700' : 'text-indigo-700'
+                                  }`}>
+                                  Neural Care Specialist • Proposal
+                                </h4>
+                                {proposalStatus === 'pending' && <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full">ACTION REQUIRED</span>}
+                              </div>
+
+                              <p className="text-slate-900 font-medium text-lg leading-snug mb-2">
+                                {proposalStatus === 'approved'
+                                  ? "Order Approved: Furosemide increased to 60mg/day."
+                                  : "Recommendation: Increase Furosemide to 60mg due to rapid weight gain (+3.3 lbs)."
+                                }
+                              </p>
+
+                              {proposalStatus === 'pending' && (
+                                <div className="flex gap-3 mt-4">
+                                  <button
+                                    onClick={() => setProposalStatus('approved')}
+                                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-xl font-semibold text-sm shadow-md shadow-indigo-200 transition-colors flex items-center gap-2"
+                                  >
+                                    <CheckCircle size={16} /> Approve Order
+                                  </button>
+                                  <button
+                                    onClick={() => setProposalStatus('rejected')}
+                                    className="bg-white hover:bg-slate-50 text-slate-600 border border-slate-200 px-5 py-2 rounded-xl font-semibold text-sm transition-colors flex items-center gap-2"
+                                  >
+                                    <XCircle size={16} /> Reject
+                                  </button>
+                                </div>
+                              )}
+                              {proposalStatus === 'approved' && (
+                                <p className="text-emerald-600 text-sm font-medium mt-1 flex items-center gap-1">
+                                  <CheckCircle size={14} /> Sent to Pharmacy (CVS #4829)
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="text-right">

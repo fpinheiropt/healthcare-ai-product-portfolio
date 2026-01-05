@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #5eead4;
+  /* Teal 300 */
+  --color-brand-secondary: #c4b5fd;
+  /* Violet 300 */
+  --font-display: 'Inter', sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-family: 'Inter', system-ui, sans-serif;
+}

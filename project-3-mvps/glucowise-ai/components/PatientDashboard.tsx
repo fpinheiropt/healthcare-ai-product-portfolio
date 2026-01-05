@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import AIChatInterface from './AIChatInterface';
+import AgentInsight from './AgentInsight';
 import RecentActivityLog from './RecentActivityLog';
+import SmartBolusCalculator from './SmartBolusCalculator';
 import { Plus, Bell, TrendingUp, Activity, Pill, AlertTriangle, Calendar, Droplet, LineChart as ChartIcon, Heart, Utensils, BookOpen, MessageSquare, Check, Info, AlertCircle } from 'lucide-react';
 import GlucoseChart from './GlucoseChart';
 import FoodLogger from './FoodLogger';
@@ -37,6 +39,9 @@ const PatientDashboard: React.FC = () => {
   const [newReadingValue, setNewReadingValue] = useState('');
   const [chartView, setChartView] = useState<'glucose' | 'a1c'>('glucose');
   const [activeTab, setActiveTab] = useState<'home' | 'checkin' | 'food' | 'learn' | 'chat'>('home');
+
+  // Agent State
+  const [prediction, setPrediction] = useState({ peak: 0, carbs: 0 });
 
   // Fetch AI insights on mount or when readings change
   useEffect(() => {
@@ -147,6 +152,12 @@ const PatientDashboard: React.FC = () => {
         {activeTab === 'home' && (
           <main className="p-5 space-y-6">
 
+            {/* Neural Guardian Agent */}
+            <AgentInsight
+              predictedGlucose={prediction.peak}
+              mealCarbs={prediction.carbs}
+            />
+
             {/* Status Card with Gradient - Matching HeartGuide AI */}
             <div className="bg-gradient-to-br from-teal-600 to-teal-800 rounded-3xl p-6 text-white shadow-xl shadow-teal-900/20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
@@ -167,7 +178,16 @@ const PatientDashboard: React.FC = () => {
             </div>
 
             {/* Glucose Prediction Simulator */}
-            <MealPredictor currentGlucose={currentVal} />
+            <MealPredictor
+              currentGlucose={currentVal}
+              onPredictionUpdate={(peak, carbs) => setPrediction({ peak, carbs })}
+            />
+
+            {/* Smart Bolus Calculator (New Feature) */}
+            <SmartBolusCalculator
+              currentGlucose={currentVal}
+              mealCarbs={prediction.carbs}
+            />
 
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-4">
